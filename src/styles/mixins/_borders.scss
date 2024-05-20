@@ -1,0 +1,5 @@
+@use "./../variables/colors";
+
+@mixin border-thin {
+  border: solid 1px colors.$color-gray-400;
+}

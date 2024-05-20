@@ -1,0 +1,12 @@
+@use "./../../styles/global";
+
+.container {
+  &__input {
+    @include global.border-radius-xs;
+    @include global.border-thin;
+
+    padding: global.$size-m;
+    font-size: global.$size-m;
+    width: 100%;
+  }
+}

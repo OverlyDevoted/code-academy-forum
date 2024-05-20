@@ -1,0 +1,10 @@
+.container {
+  align-content: normal;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: normal;
+  justify-content: space-around;
+  height: 100%;
+}/*# sourceMappingURL=AuthPage.module.css.map */

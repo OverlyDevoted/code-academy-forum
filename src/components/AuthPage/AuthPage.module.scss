@@ -1,0 +1,7 @@
+@use "./../../styles/global";
+
+.container {
+  @include global.flexbox($justifyContent: space-around, $alignItems: center);
+
+  height: 100%;
+}

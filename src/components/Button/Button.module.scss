@@ -1,0 +1,14 @@
+@use "./../../styles/global";
+.button {
+  background-color: global.$color-primary-blue;
+  border: none;
+  border-radius: global.$size-2xl;
+  color: global.$color-white;
+  font-size: 1em;
+  padding: global.$size-s;
+  width: 100%;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.75;
+  }
+}
