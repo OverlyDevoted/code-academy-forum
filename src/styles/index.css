@@ -1,0 +1,20 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Segoe UI";
+  font-size: 16px;
+  min-height: 100dvh;
+}
+
+body {
+  margin: 0;
+  height: 100dvh;
+}
+
+#__next {
+  height: 100%;
+}/*# sourceMappingURL=index.css.map */

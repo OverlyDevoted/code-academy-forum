@@ -1,0 +1,4 @@
+@use "./../variables/sizes";
+@mixin border-radius-xs {
+  border-radius: sizes.$size-xs;
+}

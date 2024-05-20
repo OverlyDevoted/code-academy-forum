@@ -4,16 +4,16 @@ Baigiamasis projektas
 
 Funkcionalumas:
 
-- Registruotis
-- Prisijungti
-- Užduoti naują klausimą (tik prisijungus)
-- Ištrinti klausimą (tik prisiijungus)
-- Atsakyti į užduotą klausimą (tik prisijungus) // EXTRA
-- Ištrinti atsakymą (tik prisijungus) // EXTRA
-- Žymėti/atžymėti patinkačius ir nepatinkančius atsakymus (like/dislike) (tik prisijungus)
-- Peržiūrėti klausimų sąrašą.
-- Filtruoti į atsakytus arba neatsakytus klausimus // EXTRA
-- Peržiūrėti klausimų atsakymus
+- [] Registruotis
+- [] Prisijungti
+- [] Užduoti naują klausimą (tik prisijungus)
+- [] Ištrinti klausimą (tik prisiijungus)
+- [] Atsakyti į užduotą klausimą (tik prisijungus) // EXTRA
+- [] Ištrinti atsakymą (tik prisijungus) // EXTRA
+- [] Žymėti/atžymėti patinkačius ir nepatinkančius atsakymus (like/dislike) (tik prisijungus)
+- [] Peržiūrėti klausimų sąrašą.
+- [] Filtruoti į atsakytus arba neatsakytus klausimus // EXTRA
+- [] Peržiūrėti klausimų atsakymus
 
 Forumo projektas sudeda iš frontend'o ir backend'o dalių:
 Backend'e naudosime NodeJS Express, MongoDB arba MySQL ir kelis papildomus npm paketus, kuries palengvins darbą.
@@ -21,16 +21,16 @@ Frontend'e naudosime React. Kaip ir backend'e node express, taip pat galima naud
 
 ### Backend'as
 
-POST /register
-POST /login
+- [x] POST /register
+- [x] POST /login
 
-GET /questions
-POST /question
-DELETE /question/:id
+- [] GET /questions
+- [] POST /question
+- [] DELETE /question/:id
 
-GET /question/:id/answers
-POST /question/:id/answers
-DELETE /answer/:id
+- [] GET /question/:id/answers
+- [] POST /question/:id/answers
+- [] DELETE /answer/:id
 
 ### Frontend'as
 
@@ -56,7 +56,7 @@ Sėkmės!
 * Bendrą web poslapio vaizdą;
 * Programuotojo žinias kurios buvo pritaikytos užduoties atlikimui;
 
-user: email, password, name, id,
+user: first_name, second_name, email, password, id,
 category: category_name, id
 question: question_text, date, id, user_id, category_id
-answer: id, answer_text, date, gained_likes_number, question_id
+answer: id, answer_text, date, liked_by, question_id

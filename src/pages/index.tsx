@@ -1,3 +1,10 @@
-export default function Home() {
-  return <main>Code Academy forum</main>;
+import Link from "next/link";
+
+export default function HomePage() {
+  return (
+    <main>
+      <Link href={"/signup"}>Register</Link>
+      <Link href={"/login"}>Login</Link>
+    </main>
+  );
 }
