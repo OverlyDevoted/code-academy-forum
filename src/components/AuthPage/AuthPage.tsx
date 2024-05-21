@@ -10,16 +10,18 @@ const cx = classNames.bind(styles);
 
 export const AuthPage = ({ children }: AuthPageProps) => {
   return (
-    <div className={cx("container")}>
-      <Image
-        src={
-          "https://codeacademy.online/static/media/register_illustration.66450890.svg"
-        }
-        alt="Cartoonish drawing of a tall man filling up a register form"
-        width={300}
-        height={300}
-      />
+    <main className={cx("container")}>
+      <figure className={cx("container__hero-container")}>
+        <Image
+          src={
+            "https://codeacademy.online/static/media/register_illustration.66450890.svg"
+          }
+          alt="Cartoonish drawing of a tall man filling up a register form"
+          layout="fill"
+          className={cx("container__hero")}
+        />
+      </figure>
       <section className={cx("container__form")}>{children}</section>
-    </div>
+    </main>
   );
 };

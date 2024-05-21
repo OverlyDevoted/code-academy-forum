@@ -1,0 +1,10 @@
+.container {
+  align-content: normal;
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  justify-content: flex-start;
+  width: 100%;
+}/*# sourceMappingURL=LoginForm.module.css.map */

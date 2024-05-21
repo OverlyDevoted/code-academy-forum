@@ -112,7 +112,7 @@ export const RegisterForm = () => {
 
   return (
     <>
-      <form>
+      <form className={cx("container")}>
         <h1>Sign-up</h1>
         <p>And start your journey right away</p>
         <div className={cx("container__name-inputs")}>

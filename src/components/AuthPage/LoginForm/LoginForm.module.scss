@@ -2,9 +2,5 @@
 
 .container {
   @include global.flexbox($direction: column, $gap: global.$size-m);
-  &__name-inputs {
-    @include global.flexbox($gap: global.$size-xs);
-  }
-  &__register-error {
-  }
+  width: 100%;
 }

@@ -1,9 +1,18 @@
+.container {
+  align-content: normal;
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  justify-content: flex-start;
+}
 .container__name-inputs {
   align-content: normal;
   align-items: stretch;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  gap: normal;
+  gap: 0.5rem;
   justify-content: flex-start;
 }/*# sourceMappingURL=RegisterForm.module.css.map */
