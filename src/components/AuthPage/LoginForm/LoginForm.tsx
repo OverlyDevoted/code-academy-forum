@@ -7,6 +7,7 @@ import { Button } from "@/components/Button";
 import { Input } from "@/components/Input";
 import { LoginErrorStates } from "./LoginForm.types";
 import { validateEmail, validatePassword } from "../helpers/validationHelpers";
+import { useAuth } from "@/hooks/useAuth";
 import styles from "./LoginForm.module.css";
 
 const cx = classNames.bind(styles);
@@ -49,6 +50,7 @@ const initialErrorState: LoginErrorStates = {
 };
 
 export const LoginForm = () => {
+  const { login } = useAuth();
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
 
@@ -77,6 +79,7 @@ export const LoginForm = () => {
       try {
         await refetch({ throwOnError: true });
         console.log(data);
+        login(data.jwtToken);
       } catch (e) {
         console.log(e);
       }
