@@ -1,0 +1,9 @@
+.container__name-inputs {
+  align-content: normal;
+  align-items: stretch;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: normal;
+  justify-content: flex-start;
+}/*# sourceMappingURL=RegisterForm.module.css.map */

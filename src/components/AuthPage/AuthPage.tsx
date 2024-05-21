@@ -19,7 +19,7 @@ export const AuthPage = ({ children }: AuthPageProps) => {
         width={300}
         height={300}
       />
-      {children}
+      <section className={cx("container__form")}>{children}</section>
     </div>
   );
 };

@@ -7,4 +7,13 @@
   gap: normal;
   justify-content: space-around;
   height: 100%;
+}
+.container__form {
+  align-content: normal;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: normal;
+  justify-content: flex-start;
 }/*# sourceMappingURL=AuthPage.module.css.map */

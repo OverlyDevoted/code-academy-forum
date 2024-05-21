@@ -1,0 +1,9 @@
+@use "./../../../styles/global";
+
+.container {
+  &__name-inputs {
+    @include global.flexbox;
+  }
+  &__register-error {
+  }
+}

@@ -4,4 +4,7 @@
   @include global.flexbox($justifyContent: space-around, $alignItems: center);
 
   height: 100%;
+  &__form {
+    @include global.flexbox($direction: column, $alignItems: center);
+  }
 }
