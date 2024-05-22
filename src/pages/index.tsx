@@ -1,13 +1,5 @@
-import Link from "next/link";
-import ProtectedRoute from "@/components/ProtectedRoute/ProtectedRoute";
+import { MainPage } from "@/components/MainPage";
 
 export default function HomePage() {
-  return (
-    <main>
-      <ProtectedRoute>
-        <Link href={"/signup"}>Register</Link>
-        <Link href={"/login"}>Login</Link>
-      </ProtectedRoute>
-    </main>
-  );
+  return <MainPage />;
 }

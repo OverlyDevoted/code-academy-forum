@@ -1,0 +1,5 @@
+@use "./../../styles/global";
+
+.sidebar {
+  @include global.flexbox($direction: column);
+}

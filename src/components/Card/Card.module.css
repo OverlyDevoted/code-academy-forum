@@ -1,0 +1,8 @@
+.card {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border: solid 1px #edeff2;
+  border-radius: 0.25rem;
+  height: 100%;
+  padding: 1.25rem;
+  width: 100%;
+}/*# sourceMappingURL=Card.module.css.map */

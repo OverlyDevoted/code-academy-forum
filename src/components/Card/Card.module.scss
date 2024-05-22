@@ -1,0 +1,11 @@
+@use "./../../styles/global";
+
+.card {
+  @include global.box-shadow-s;
+
+  border: solid 1px global.$color-gray-200;
+  border-radius: global.$size-2xs;
+  height: 100%;
+  padding: global.$size-l;
+  width: 100%;
+}

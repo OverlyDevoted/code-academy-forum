@@ -5,7 +5,7 @@ Baigiamasis projektas
 Funkcionalumas:
 
 - [x] Registruotis
-- [ ] Prisijungti
+- [x] Prisijungti
 - [ ] Užduoti naują klausimą (tik prisijungus)
 - [ ] Ištrinti klausimą (tik prisiijungus)
 - [ ] Atsakyti į užduotą klausimą (tik prisijungus) // EXTRA

@@ -1,0 +1,9 @@
+.sidebar {
+  align-content: normal;
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: normal;
+  justify-content: flex-start;
+}/*# sourceMappingURL=Sidebar.module.css.map */
