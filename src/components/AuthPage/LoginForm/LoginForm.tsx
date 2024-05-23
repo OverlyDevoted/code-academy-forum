@@ -2,7 +2,6 @@ import React, { useRef, useState } from "react";
 import Link from "next/link";
 import classNames from "classnames/bind";
 import { useQuery } from "@tanstack/react-query";
-import { useRouter } from "next/router";
 import { Button } from "@/components/Button";
 import { Input } from "@/components/Input";
 import { LoginErrorStates } from "./LoginForm.types";
@@ -78,13 +77,16 @@ export const LoginForm = () => {
       setErrorState(initialErrorState);
       try {
         await refetch({ throwOnError: true });
-        console.log(data);
-        login(data.jwtToken);
       } catch (e) {
         console.log(e);
       }
     }
   };
+
+  if (!!data) {
+    // console.log(data);
+    login(data.jwtToken);
+  }
 
   return (
     <>

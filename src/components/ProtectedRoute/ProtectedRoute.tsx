@@ -13,7 +13,6 @@ const ProtectedRoute = ({ children, isAuthPage }: ProtectedRouteProps) => {
 
   useEffect(() => {
     if (isAuthPage && isLogged) router.push("/");
-    if (!isAuthPage && !isLogged) router.push("/login");
   });
 
   return <>{children}</>;

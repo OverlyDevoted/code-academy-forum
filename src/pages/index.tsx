@@ -1,5 +1,10 @@
 import { MainPage } from "@/components/MainPage";
+import { UserDataProvider } from "@/utils/UserDataContext";
 
 export default function HomePage() {
-  return <MainPage />;
+  return (
+    <UserDataProvider>
+      <MainPage>HELLO</MainPage>
+    </UserDataProvider>
+  );
 }

@@ -11,12 +11,15 @@ export const AuthContext = createContext<AuthContext | null>(null);
 
 const checkIsLogged = () => {
   const jwt = Cookies.get("jwt");
+
   return !!jwt;
 };
 
 const login = (token: string) => {
-  Cookies.set("jwt", token);
-  window.dispatchEvent(new StorageEvent("authStorage"));
+  if (typeof window !== "undefined") {
+    Cookies.set("jwt", token);
+    window.dispatchEvent(new StorageEvent("authStorage"));
+  }
 };
 
 const logout = () => {
@@ -32,16 +35,18 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [isLogged, setIsLogged] = useState(false);
 
   useEffect(() => {
-    setIsLogged(checkIsLogged());
     const handleAuthState = () => {
-      setIsLogged(checkIsLogged);
+      const logged = checkIsLogged();
+      // console.log(logged);
+      setIsLogged(logged);
     };
+    setIsLogged(checkIsLogged());
     window.addEventListener("authStorage", handleAuthState);
     return () => window.removeEventListener("authStorage", handleAuthState);
   }, []);
 
   const providerValue: AuthContext = useMemo(
-    () => ({ isLogged, login, logout }),
+    () => ({ login, logout, isLogged }),
     [isLogged]
   );
 
