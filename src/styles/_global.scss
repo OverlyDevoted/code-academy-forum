@@ -1,6 +1,8 @@
 @forward "./mixins/borders";
 @forward "./mixins/border_radius";
 @forward "./mixins/box-shadows";
-@forward "./variables/colors";
 @forward "./mixins/flexbox";
+@forward "./mixins/dimensions";
+
+@forward "./variables/colors";
 @forward "./variables/sizes";

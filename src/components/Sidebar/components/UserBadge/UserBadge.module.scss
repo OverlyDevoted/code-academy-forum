@@ -1,0 +1,30 @@
+@use "./../../../../styles/global";
+
+.user-badge {
+  @include global.border-radius-xs;
+  @include global.flexbox($alignItems: center, $gap: 1rem);
+
+  background-color: global.$color-gray-200;
+  cursor: pointer;
+  padding: global.$size-s;
+  width: 100%;
+
+  &__icon {
+    @include global.border-radius-circle;
+    @include global.dimensions(48px, 48px);
+    @include global.flexbox($justifyContent: center, $alignItems: center);
+
+    color: global.$color-white;
+    font-weight: 600;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  &__username {
+    word-wrap: break-word;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+}

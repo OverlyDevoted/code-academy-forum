@@ -4,21 +4,25 @@ import Link from "next/link";
 import { Card } from "../Card";
 import { useAuth } from "@/hooks/useAuth";
 import { useUserDatta } from "@/hooks/useUserData";
+import { UserBadge } from "./components/UserBadge";
 import styles from "./Sidebar.module.css";
 
 const cx = classNames.bind(styles);
 
 export const Sidebar = () => {
-  const { userData } = useUserDatta();
+  const { userData, isFetched } = useUserDatta();
 
   return (
     <aside className={cx("sidebar")}>
       <Card>
-        {userData ? JSON.stringify(userData) : <Link href="/login">Login</Link>}
-        {/* {!isFetched && <div>Loading</div>}
-        {JSON.stringify(userData) ?? ""}
-        {isError && } */}
-        Hello
+        <UserBadge
+          username={
+            userData
+              ? `${userData.first_name} ${userData.second_name}`
+              : undefined
+          }
+          isFetched={isFetched}
+        />
       </Card>
     </aside>
   );

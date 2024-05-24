@@ -17,6 +17,7 @@ interface UserDataContextProps {
 export const UserDataContext = createContext<UserDataContext | null>(null);
 
 const getUserData = async () => {
+  await new Promise((res) => setTimeout(res, 3000));
   const res = await fetch("http://localhost:8080/user", {
     headers: {
       Authorization: Cookies.get("jwt") ?? "",

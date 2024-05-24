@@ -3,3 +3,7 @@
 @mixin border-radius-xs {
   border-radius: sizes.$size-xs;
 }
+
+@mixin border-radius-circle {
+  border-radius: 50%;
+}

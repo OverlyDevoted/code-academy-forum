@@ -1,1 +1,1 @@
-{"version":3,"sources":["Sidebar.module.scss","../../styles/mixins/_flexbox.scss","Sidebar.module.css"],"names":[],"mappings":"AAEA;ECME,qBALe;EAMf,oBAJa;EAKb,aAAA;EACA,sBDRoC;ECSpC,iBAVO;EAWP,WAPM;EAQN,2BAViB;ACInB","file":"Sidebar.module.css"}
+{"version":3,"sources":["Sidebar.module.scss","../../styles/mixins/_flexbox.scss","Sidebar.module.css"],"names":[],"mappings":"AAEA;ECME,qBALe;EAMf,oBAJa;EAKb,aAAA;EACA,sBDRoC;ECSpC,iBAVO;EAWP,WAPM;EAQN,2BAViB;EDAjB,gBAAA;AEKF","file":"Sidebar.module.css"}

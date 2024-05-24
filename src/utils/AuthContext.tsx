@@ -37,7 +37,6 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   useEffect(() => {
     const handleAuthState = () => {
       const logged = checkIsLogged();
-      // console.log(logged);
       setIsLogged(logged);
     };
     setIsLogged(checkIsLogged());
