@@ -8,7 +8,7 @@
   &__main-container {
     @include global.flexbox($direction: column);
 
-    padding: global.$size-xl;
+    padding: global.$size-l;
     margin: 0 auto;
     max-width: 720px;
     width: 100%;

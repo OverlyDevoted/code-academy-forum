@@ -1,0 +1,9 @@
+@use "./../../styles/global";
+
+.container {
+  @include global.flexbox($direction: column, $gap: global.$size-3xl);
+
+  &__list {
+    @include global.flexbox($direction: column, $gap: global.$size-xl);
+  }
+}

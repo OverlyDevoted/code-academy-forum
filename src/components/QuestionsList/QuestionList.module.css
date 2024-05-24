@@ -1,24 +1,18 @@
-.main-layout {
-  align-content: normal;
-  align-items: stretch;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  gap: normal;
-  justify-content: flex-start;
-  height: 100%;
-  width: 100%;
-}
-.main-layout__main-container {
+.container {
   align-content: normal;
   align-items: stretch;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  gap: normal;
+  gap: 2rem;
   justify-content: flex-start;
-  padding: 1.25rem;
-  margin: 0 auto;
-  max-width: 720px;
-  width: 100%;
-}/*# sourceMappingURL=MainLayout.module.css.map */
+}
+.container__list {
+  align-content: normal;
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 1.5rem;
+  justify-content: flex-start;
+}/*# sourceMappingURL=QuestionList.module.css.map */

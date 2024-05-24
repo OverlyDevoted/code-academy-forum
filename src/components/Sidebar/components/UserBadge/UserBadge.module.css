@@ -7,7 +7,7 @@
   flex-wrap: nowrap;
   gap: 1rem;
   justify-content: flex-start;
-  background-color: #edeff2;
+  background-color: #dfdfdf;
   cursor: pointer;
   padding: 0.75rem;
   width: 100%;
@@ -29,6 +29,7 @@
   flex-shrink: 0;
 }
 .user-badge__username {
+  font-weight: 600;
   word-wrap: break-word;
   -webkit-box-orient: vertical;
   display: -webkit-box;

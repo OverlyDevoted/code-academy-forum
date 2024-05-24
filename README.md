@@ -4,16 +4,24 @@ Baigiamasis projektas
 
 Funkcionalumas:
 
+## Autentikacija
+
 - [x] Registruotis
 - [x] Prisijungti
+
+## Klausimai
+
+- [x] Peržiūrėti klausimų sąrašą.
 - [ ] Užduoti naują klausimą (tik prisijungus)
 - [ ] Ištrinti klausimą (tik prisiijungus)
+- [ ] Filtruoti į atsakytus arba neatsakytus klausimus // EXTRA
+
+## Atsakymai
+
+- [ ] Peržiūrėti klausimų atsakymus
 - [ ] Atsakyti į užduotą klausimą (tik prisijungus) // EXTRA
 - [ ] Ištrinti atsakymą (tik prisijungus) // EXTRA
 - [ ] Žymėti/atžymėti patinkačius ir nepatinkančius atsakymus (like/dislike) (tik prisijungus)
-- [x] Peržiūrėti klausimų sąrašą.
-- [ ] Filtruoti į atsakytus arba neatsakytus klausimus // EXTRA
-- [ ] Peržiūrėti klausimų atsakymus
 
 Forumo projektas sudeda iš frontend'o ir backend'o dalių:
 Backend'e naudosime NodeJS Express, MongoDB arba MySQL ir kelis papildomus npm paketus, kuries palengvins darbą.

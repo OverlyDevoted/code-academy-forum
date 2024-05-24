@@ -1,10 +1,10 @@
 import React from "react";
-import { Card } from "../Card";
+import { Card } from "@/components/Card";
 
 export const QuestionSearch = () => {
   return (
     <Card boxShadow="xs" borderRadius="m">
-      QuestionSearch
+      <h2>Question Search</h2>
     </Card>
   );
 };

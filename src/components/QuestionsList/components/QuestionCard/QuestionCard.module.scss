@@ -1,0 +1,22 @@
+@use "./../../../../styles/global";
+
+.question-card {
+  @include global.flexbox($direction: column, $gap: global.$size-s);
+
+  height: fit-content;
+
+  &__info {
+    @include global.flexbox(
+      $gap: global.$size-s,
+      $justifyContent: space-between
+    );
+  }
+
+  &__category {
+    @include global.border-radius-xs;
+
+    color: global.$color-white;
+    display: inline-block;
+    padding: global.$size-2xs;
+  }
+}

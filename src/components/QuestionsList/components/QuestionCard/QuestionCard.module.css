@@ -1,0 +1,26 @@
+.question-card {
+  align-content: normal;
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 0.75rem;
+  justify-content: flex-start;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.question-card__info {
+  align-content: normal;
+  align-items: stretch;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 0.75rem;
+  justify-content: space-between;
+}
+.question-card__category {
+  border-radius: 0.5rem;
+  color: #ffffff;
+  display: inline-block;
+  padding: 0.25rem;
+}/*# sourceMappingURL=QuestionCard.module.css.map */

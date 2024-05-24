@@ -3,7 +3,7 @@
 .container {
   &__input {
     @include global.border-radius-xs;
-    @include global.border-thin;
+    @include global.border-thin(global.$color-gray-400);
 
     padding: global.$size-m;
     font-size: global.$size-m;

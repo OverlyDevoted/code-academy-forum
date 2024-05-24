@@ -14,7 +14,7 @@ export interface LoginData {
 
 export type QuestionUser = Omit<User, "email"> & { updatedAt: string };
 
-export interface Question {
+export interface QuestionServer {
   id: string;
   question_title: string;
   question_text: string;
@@ -26,5 +26,21 @@ export interface Question {
 }
 
 export interface QuestionsResponse {
-  questions: Question[];
+  questions: QuestionServer[];
+}
+
+export type Question = Omit<QuestionServer, "category_id"> & {
+  category: Category;
+};
+
+export interface Category {
+  id: string;
+  category_name: string;
+  createdAt: string;
+  updatedAt: string;
+  hue: number;
+}
+
+export interface Categories {
+  categories: Category[];
 }
