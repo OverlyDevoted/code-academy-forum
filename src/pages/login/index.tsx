@@ -1,12 +1,12 @@
 import React from "react";
-import { AuthPage } from "@/components/AuthPage";
-import { LoginForm } from "@/components/AuthPage/LoginForm";
+import { AuthLayout } from "@/layouts/AuthLayout";
+import { LoginForm } from "@/layouts/AuthLayout/components/LoginForm";
 
 const LoginPage = () => {
   return (
-    <AuthPage>
+    <AuthLayout>
       <LoginForm />
-    </AuthPage>
+    </AuthLayout>
   );
 };
 

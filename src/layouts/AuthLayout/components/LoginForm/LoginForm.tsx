@@ -5,7 +5,10 @@ import { useQuery } from "@tanstack/react-query";
 import { Button } from "@/components/Button";
 import { Input } from "@/components/Input";
 import { LoginErrorStates } from "./LoginForm.types";
-import { validateEmail, validatePassword } from "../helpers/validationHelpers";
+import {
+  validateEmail,
+  validatePassword,
+} from "../../helpers/validationHelpers";
 import { useAuth } from "@/hooks/useAuth";
 import styles from "./LoginForm.module.css";
 

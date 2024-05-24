@@ -1,12 +1,12 @@
 import React from "react";
-import { AuthPage } from "@/components/AuthPage";
-import { RegisterForm } from "@/components/AuthPage/RegisterForm";
+import { AuthLayout } from "@/layouts/AuthLayout";
+import { RegisterForm } from "@/layouts/AuthLayout/components/RegisterForm";
 
 const SignupPage = () => {
   return (
-    <AuthPage>
+    <AuthLayout>
       <RegisterForm />
-    </AuthPage>
+    </AuthLayout>
   );
 };
 

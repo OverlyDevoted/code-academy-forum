@@ -1,10 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import { useMemo } from "react";
-import { MainPage } from "@/components/MainPage";
-import { UserDataProvider } from "@/utils/UserDataContext";
 import { fetchData } from "@/utils/fetchData";
 import { QuestionsResponse } from "@/types/Backend.types";
 import { QuestionCard } from "@/components/QuestionCard";
+import { MainLayout } from "@/layouts/MainLayout";
 
 const fetchPosts = () => {
   return fetchData<QuestionsResponse>("question");
@@ -20,5 +19,5 @@ export default function HomePage() {
     });
   }, [data]);
 
-  return <MainPage>{data ? renderQuestionCards : "Loading..."}</MainPage>;
+  return <MainLayout>{data ? renderQuestionCards : "Loading..."}</MainLayout>;
 }

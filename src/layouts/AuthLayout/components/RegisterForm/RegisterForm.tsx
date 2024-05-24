@@ -10,7 +10,7 @@ import {
   validateEmail,
   validateName,
   validatePassword,
-} from "../helpers/validationHelpers";
+} from "../../helpers/validationHelpers";
 import styles from "./RegisterForm.module.css";
 
 const cx = classNames.bind(styles);

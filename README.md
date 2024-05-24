@@ -11,7 +11,7 @@ Funkcionalumas:
 - [ ] Atsakyti į užduotą klausimą (tik prisijungus) // EXTRA
 - [ ] Ištrinti atsakymą (tik prisijungus) // EXTRA
 - [ ] Žymėti/atžymėti patinkačius ir nepatinkančius atsakymus (like/dislike) (tik prisijungus)
-- [ ] Peržiūrėti klausimų sąrašą.
+- [x] Peržiūrėti klausimų sąrašą.
 - [ ] Filtruoti į atsakytus arba neatsakytus klausimus // EXTRA
 - [ ] Peržiūrėti klausimų atsakymus
 

@@ -1,15 +1,15 @@
 import Image from "next/image";
 import React from "react";
 import classNames from "classnames/bind";
-import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
-import styles from "./AuthPage.module.css";
+import ProtectedRoute from "../../components/ProtectedRoute/ProtectedRoute";
+import styles from "./AuthLayout.module.css";
 interface AuthPageProps {
   children: React.ReactNode;
 }
 
 const cx = classNames.bind(styles);
 
-export const AuthPage = ({ children }: AuthPageProps) => {
+export const AuthLayout = ({ children }: AuthPageProps) => {
   return (
     <ProtectedRoute isAuthPage>
       <main className={cx("container")}>
