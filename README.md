@@ -24,12 +24,12 @@ Frontend'e naudosime React. Kaip ir backend'e node express, taip pat galima naud
 - [x] POST /register
 - [x] POST /login
 
-- [ ] GET /questions
-- [ ] POST /question
+- [x] GET /questions
+- [x] POST /question
 - [ ] DELETE /question/:id
 
-- [ ] GET /question/:id/answers
-- [ ] POST /question/:id/answers
+- [x] GET /question/:id/answers
+- [x] POST /question/:id/answers
 - [ ] DELETE /answer/:id
 
 ### Frontend'as

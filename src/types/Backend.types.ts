@@ -4,6 +4,7 @@ export interface User {
   second_name: string;
   email: string;
   createdAt: string;
+  hue: number;
 }
 
 export interface LoginData {

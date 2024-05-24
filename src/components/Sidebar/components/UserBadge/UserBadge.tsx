@@ -8,10 +8,11 @@ const cx = classNames.bind(styles);
 
 interface UserBadgeProps {
   username?: string;
+  hue: number;
   isFetched: boolean;
 }
 
-export const UserBadge = ({ username, isFetched }: UserBadgeProps) => {
+export const UserBadge = ({ username, isFetched, hue }: UserBadgeProps) => {
   const userHSL = useMemo(() => getRandomHSL(), []);
 
   const renderUserState = () => {
@@ -32,7 +33,7 @@ export const UserBadge = ({ username, isFetched }: UserBadgeProps) => {
         <span
           className={cx("user-badge__icon")}
           style={{
-            backgroundColor: `hsl(${userHSL.hue}deg,${userHSL.saturation}%,${userHSL.ligthness}%)`,
+            backgroundColor: `hsl(${hue}deg,${userHSL.saturation}%,${userHSL.ligthness}%)`,
           }}
         >
           <span>{username[0]}</span>

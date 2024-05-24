@@ -1,8 +1,8 @@
 import Cookies from "js-cookie";
 import { createContext, useEffect, useMemo } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { User } from "@/types/User.types";
 import { useAuth } from "@/hooks/useAuth";
+import { User } from "@/types/Backend.types";
 
 interface UserDataContext {
   userData: User | undefined;
@@ -31,6 +31,7 @@ const getUserData = async () => {
       email: user.email,
       first_name: user.first_name,
       second_name: user.second_name,
+      hue: user.hue,
     };
     return userData;
   }

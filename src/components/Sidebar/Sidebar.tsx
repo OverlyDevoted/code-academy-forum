@@ -1,8 +1,6 @@
 import React from "react";
 import classNames from "classnames/bind";
-import Link from "next/link";
 import { Card } from "../Card";
-import { useAuth } from "@/hooks/useAuth";
 import { useUserDatta } from "@/hooks/useUserData";
 import { UserBadge } from "./components/UserBadge";
 import styles from "./Sidebar.module.css";
@@ -22,6 +20,7 @@ export const Sidebar = () => {
               : undefined
           }
           isFetched={isFetched}
+          hue={userData?.hue ?? 0}
         />
       </Card>
     </aside>
