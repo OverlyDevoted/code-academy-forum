@@ -8,7 +8,7 @@ import { LoginErrorStates } from "./LoginForm.types";
 import {
   validateEmail,
   validatePassword,
-} from "../../helpers/validationHelpers";
+} from "../../../layouts/AuthLayout/helpers/validationHelpers";
 import { useAuth } from "@/hooks/useAuth";
 import styles from "./LoginForm.module.css";
 

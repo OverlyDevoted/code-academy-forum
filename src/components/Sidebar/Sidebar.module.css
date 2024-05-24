@@ -36,4 +36,7 @@
   flex-wrap: nowrap;
   gap: normal;
   justify-content: space-between;
+}
+.sidebar__new-post-button {
+  color: #000000;
 }/*# sourceMappingURL=Sidebar.module.css.map */

@@ -17,4 +17,8 @@
   &__header-content {
     @include global.flexbox($justifyContent: space-between);
   }
+
+  &__new-post-button {
+    color: global.$color-black;
+  }
 }

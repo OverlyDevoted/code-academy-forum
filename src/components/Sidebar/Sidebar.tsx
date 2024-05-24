@@ -1,5 +1,6 @@
 import React from "react";
 import classNames from "classnames/bind";
+import Link from "next/link";
 import { Card } from "../Card";
 import { useUserDatta } from "@/hooks/useUserData";
 import { UserBadge } from "./components/UserBadge";
@@ -19,7 +20,9 @@ export const Sidebar = () => {
     <aside className={cx("sidebar")}>
       <Card isFullHeight boxShadow="s">
         <div className={cx("sidebar__content")}>
-          <CodeAcademyLogo />
+          <Link href="/">
+            <CodeAcademyLogo />
+          </Link>
           <UserBadge
             username={
               userData
@@ -32,7 +35,9 @@ export const Sidebar = () => {
           <div className={cx("sidebar__header")}>
             <div className={cx("sidebar__header-content")}>
               <span>Your questions</span>
-              <NewPostIcon />
+              <Link className={cx("sidebar__new-post-button")} href="create">
+                <NewPostIcon />
+              </Link>
             </div>
             <Divider />
           </div>
