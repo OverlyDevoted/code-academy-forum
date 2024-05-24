@@ -6,3 +6,7 @@ export interface FetchType {
   body?: string;
   auth?: boolean;
 }
+
+export interface ErrorType {
+  message: string;
+}

@@ -1,7 +1,17 @@
+import classNames from "classnames/bind";
+import { Question, QuestionUser } from "@/types/Backend.types";
 import { Card } from "../Card";
+import styles from "./QuestionCard.module.css";
 
-interface QuestionCardProps {}
+const cx = classNames.bind(styles);
+interface QuestionCardProps {
+  question: Question;
+}
 
-export const QuestionCard = () => {
-  return <Card>QuestionCard</Card>;
+export const QuestionCard = ({ question }: QuestionCardProps) => {
+  return (
+    <Card borderRadius="m">
+      <div className={cx("question-card")}>{question.question_title}</div>
+    </Card>
+  );
 };

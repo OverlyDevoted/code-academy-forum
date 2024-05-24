@@ -1,5 +1,16 @@
 @use "./../../styles/global";
-.main-container {
+.main-layout {
   @include global.flexbox;
+
   height: 100%;
+  width: 100%;
+
+  &__main-container {
+    @include global.flexbox($direction: column);
+
+    padding: global.$size-xl;
+    margin: 0 auto;
+    max-width: 720px;
+    width: 100%;
+  }
 }

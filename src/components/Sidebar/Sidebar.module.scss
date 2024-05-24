@@ -3,4 +3,5 @@
 .sidebar {
   @include global.flexbox($direction: column);
   max-width: 230px;
+  flex-shrink: 0;
 }

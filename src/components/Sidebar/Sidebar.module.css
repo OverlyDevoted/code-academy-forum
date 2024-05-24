@@ -7,4 +7,5 @@
   gap: normal;
   justify-content: flex-start;
   max-width: 230px;
+  flex-shrink: 0;
 }/*# sourceMappingURL=Sidebar.module.css.map */

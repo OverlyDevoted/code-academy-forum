@@ -1,8 +1,24 @@
 .card {
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   border: solid 1px #edeff2;
-  border-radius: 0.25rem;
-  height: 100%;
   padding: 1.25rem;
   width: 100%;
+}
+.card--box-radius-xs {
+  border-radius: 0.5rem;
+}
+.card--box-radius-m {
+  border-radius: 1rem;
+}
+.card--box-shadow-xs {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.card--box-shadow-s {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.card--box-shadow-m {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.card--full-height {
+  height: 100%;
 }/*# sourceMappingURL=Card.module.css.map */

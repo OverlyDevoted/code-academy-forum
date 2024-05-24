@@ -12,7 +12,7 @@ export const Sidebar = () => {
 
   return (
     <aside className={cx("sidebar")}>
-      <Card>
+      <Card isFullHeight boxShadow="s">
         <UserBadge
           username={
             userData
