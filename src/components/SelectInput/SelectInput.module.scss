@@ -1,0 +1,78 @@
+@use "./../../styles/global";
+
+.select {
+  @include global.flexbox($direction: column, $gap: global.$size-s);
+
+  position: relative;
+
+  &__label {
+    text-align: left;
+  }
+
+  &__input {
+    @include global.flexbox($justifyContent: space-between);
+
+    border: none;
+    box-shadow: inset 0 0 0 1px global.$color-gray-300;
+    padding: global.$size-2xs global.$size-2xs;
+
+    &__value {
+      align-self: center;
+      user-select: none;
+    }
+
+    &__placeholder {
+      color: global.$color-gray-500;
+    }
+
+    &__icon-arrow-filled {
+      & path {
+        fill: global.$color-gray-500;
+      }
+    }
+
+    &__icon--rotated {
+      transform: rotate(0.5turn);
+    }
+  }
+
+  &__input--focused {
+    box-shadow: inset 0 0 0 2px global.$color-black;
+  }
+
+  &__list {
+    @include global.flexbox($direction: column);
+
+    background-color: global.$color-white;
+    border: 1px solid global.$color-gray-200;
+    outline: none;
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    z-index: 2;
+
+    &__list-item {
+      padding: calc(global.$size-2xs + 2px) 0 calc(global.$size-2xs + 2px)
+        global.$size-2xs;
+      text-align: left;
+      width: 100%;
+
+      //   &:first-child {
+      //     border-radius: $border-radius-regular $border-radius-regular 0 0;
+      //   }
+
+      //   &:last-child {
+      //     border-radius: 0 0 $border-radius-regular $border-radius-regular;
+      //   }
+
+      &:hover {
+        // background-color: $color-purple-200;
+      }
+    }
+
+    & .select__list-item--selected {
+      //   background-color: $color-light-blue;
+      //   color: $color-orange-600;
+    }
+  }
+}

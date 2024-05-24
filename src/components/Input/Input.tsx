@@ -18,13 +18,18 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
 ) {
   return (
     <div className={cx("container")}>
-      {label && <label htmlFor={id}>{label}</label>}
+      {label && (
+        <label id={`${id}-label`} htmlFor={id}>
+          {label}
+        </label>
+      )}
       <input
         className={cx("container__input")}
         ref={ref}
         type={type}
         id={id}
         placeholder={placeholder}
+        aria-labelledby={`${id}-label`}
       />
       {error && <div className={cx("container__error")}>{error}</div>}
     </div>
