@@ -13,33 +13,46 @@
 }
 .select__input {
   align-content: normal;
-  align-items: stretch;
+  align-items: center;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   gap: normal;
-  justify-content: space-between;
-  border: none;
-  box-shadow: inset 0 0 0 1px #bfbfbf;
-  padding: 0.25rem 0.25rem;
+  justify-content: flex-start;
+  border-radius: 0.5rem;
+  border: solid 1px #9f9f9f;
+  background-color: #ffffff;
+  padding: 1rem;
+  font-size: 1rem;
+  width: 100%;
+  text-align: left;
 }
-.select__input__value {
+.select__input:hover {
+  background-color: #f1f1f1;
+}
+.select__value {
   align-self: center;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
 }
-.select__input__placeholder {
+.select__placeholder {
   color: #808080;
 }
-.select__input__icon-arrow-filled path {
-  fill: #808080;
-}
-.select__input__icon--rotated {
-  transform: rotate(0.5turn);
+.select__icon {
+  rotate: 180deg;
+  color: #000000;
+  position: absolute;
+  margin-right: 1rem;
+  right: 0;
+  transition: rotate 300ms linear;
 }
 .select__input--focused {
-  box-shadow: inset 0 0 0 2px #000000;
+  outline: auto;
+  z-index: 1;
+}
+.select__input--focused .select__icon {
+  rotate: 0deg;
 }
 .select__list {
   align-content: normal;
@@ -49,16 +62,42 @@
   flex-wrap: nowrap;
   gap: normal;
   justify-content: flex-start;
+  border-radius: 0.5rem;
   background-color: #ffffff;
   border: 1px solid #dfdfdf;
-  outline: none;
   position: absolute;
-  top: 70px;
+  top: 3.5em;
   width: 100%;
   z-index: 2;
 }
-.select__list__list-item {
-  padding: calc(0.25rem + 2px) 0 calc(0.25rem + 2px) 0.25rem;
-  text-align: left;
+.select__list-item {
+  align-content: normal;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: normal;
+  justify-content: flex-start;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: #ffffff;
+  padding: 1rem;
+  font-size: 1rem;
   width: 100%;
+  text-align: left;
+}
+.select__list-item:first-child {
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+.select__list-item:last-child {
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+.select__list-item:hover {
+  background-color: #3acab9;
+  color: #ffffff;
+}
+.select__list-item--selected {
+  background-color: #a254ff;
+  color: #ffffff;
+  z-index: 1;
 }/*# sourceMappingURL=SelectInput.module.css.map */

@@ -7,6 +7,7 @@ interface ButtonProps {
   onClick: MouseEventHandler<HTMLButtonElement>;
   type?: "button" | "submit";
   isLoading?: boolean;
+  isDisabled?: boolean;
 }
 
 const cx = classNames.bind(styles);
@@ -16,13 +17,15 @@ export const Button = ({
   onClick,
   type = "button",
   isLoading = false,
+  isDisabled = false,
 }: ButtonProps) => {
   return (
     <button
       className={cx("button")}
       onClick={onClick}
       type={type}
-      disabled={isLoading}
+      aria-busy={isLoading}
+      disabled={isDisabled}
     >
       {isLoading ? <span className={cx("button--loader")}></span> : label}
     </button>

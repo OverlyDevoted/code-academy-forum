@@ -1,0 +1,14 @@
+@use "./../../styles/global";
+
+.textarea {
+  @include global.flexbox($alignItems: center);
+  @include global.border-radius-xs;
+  @include global.border-thin(global.$color-gray-400);
+
+  background-color: global.$color-white;
+  padding: global.$size-m;
+  font-size: global.$size-m;
+  width: 100%;
+  text-align: left;
+  resize: vertical;
+}

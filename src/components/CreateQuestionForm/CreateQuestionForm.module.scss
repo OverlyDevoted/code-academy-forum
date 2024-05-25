@@ -1,0 +1,26 @@
+@use "./../../styles/global";
+
+.question-form {
+  @include global.flexbox($direction: column, $gap: global.$size-l);
+
+  &__inputs {
+    @include global.flexbox($direction: column, $gap: global.$size-l);
+  }
+  &__textarea-counter {
+    color: global.$color-green;
+    &::after {
+      content: "/1000";
+    }
+    &[aria-invalid="true"] {
+      color: global.$color-red;
+    }
+  }
+
+  &__input-container {
+    @include global.flexbox($direction: column, $gap: global.$size-xs);
+  }
+
+  &__paragraph {
+    color: global.$color-gray-500;
+  }
+}

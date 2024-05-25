@@ -1,5 +1,6 @@
 import { ReactElement, useRef, useState } from "react";
 import classNames from "classnames/bind";
+import ChevronDownIcon from "@/assets/icons/chevron-down.svg";
 import styles from "./SelectInput.module.css";
 
 const cx = classNames.bind(styles);
@@ -48,6 +49,7 @@ export function SelectInput({
         ) : (
           <p className={cx("select__placeholder")}>{placeholder}</p>
         )}
+        <ChevronDownIcon className={cx("select__icon")} />
       </button>
       {isOpen && (
         <div className={cx("select__list")}>
@@ -62,6 +64,7 @@ export function SelectInput({
               onClick={() => {
                 if (isSelected(option)) {
                   onChange(undefined);
+                  setIsOpen((prev) => !prev);
                 } else {
                   onChange(option);
                   setIsOpen((prev) => !prev);

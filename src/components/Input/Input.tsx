@@ -10,10 +10,11 @@ type InputProps = {
   placeholder?: string;
   error?: string;
   type?: "text" | "password" | "email";
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
 };
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
-  { id, placeholder, label, type = "text", error },
+  { id, placeholder, label, type = "text", error, onChange },
   ref
 ) {
   return (
@@ -30,6 +31,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
         id={id}
         placeholder={placeholder}
         aria-labelledby={`${id}-label`}
+        onChange={onChange}
       />
       {error && <div className={cx("container__error")}>{error}</div>}
     </div>
