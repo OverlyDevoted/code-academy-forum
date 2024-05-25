@@ -6,7 +6,6 @@
   flex-wrap: nowrap;
   gap: normal;
   justify-content: flex-start;
-  height: 100%;
   width: 100%;
 }
 .main-layout__main-container {

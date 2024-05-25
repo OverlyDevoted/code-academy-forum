@@ -3,6 +3,7 @@
   border: solid 1px #dfdfdf;
   padding: 1.25rem;
   width: 100%;
+  background-color: #ffffff;
 }
 .card--box-radius-xs {
   border-radius: 0.5rem;

@@ -8,6 +8,10 @@
   border-radius: sizes.$size-m;
 }
 
+@mixin border-radius-xl {
+  border-radius: sizes.$size-xl;
+}
+
 @mixin border-radius-circle {
   border-radius: 50%;
 }

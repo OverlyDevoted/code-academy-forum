@@ -7,6 +7,7 @@ export interface FetchType {
   auth?: boolean;
 }
 
-export interface ErrorType {
+export type ErrorType = {
   message: string;
-}
+  error?: { [key: string]: string }[];
+};

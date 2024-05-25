@@ -4,7 +4,9 @@
   @include global.flexbox($direction: column);
   max-width: 230px;
   flex-shrink: 0;
-
+  position: sticky;
+  top: 0;
+  max-height: 100dvh;
   &__content {
     @include global.flexbox($direction: column, $gap: global.$size-xl);
   }

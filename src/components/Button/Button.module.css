@@ -1,11 +1,18 @@
 .button {
   background-color: #1200ff;
   border: none;
-  border-radius: 1.75rem;
   color: #ffffff;
   font-size: 1em;
   padding: 0.75rem;
   width: 100%;
+}
+.button--secondary {
+  box-shadow: inset 0 0 0 3px #1200ff;
+  background-color: #ffffff;
+  color: #000000;
+}
+.button--secondary:hover {
+  background-color: rgba(18, 0, 255, 0.08);
 }
 .button:hover {
   cursor: pointer;
@@ -28,6 +35,15 @@
   display: inline-block;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
+}
+.button--xs {
+  border-radius: 0.5rem;
+}
+.button--m {
+  border-radius: 1rem;
+}
+.button--xl {
+  border-radius: 1.5rem;
 }
 
 @keyframes rotation {

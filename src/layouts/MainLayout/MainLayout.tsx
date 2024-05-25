@@ -10,11 +10,12 @@ const cx = classNames.bind(styles);
 
 interface MainPageProps {
   children: React.ReactNode;
+  isAuthorizedPage?: boolean;
 }
 
-export const MainLayout = ({ children }: MainPageProps) => {
+export const MainLayout = ({ children, isAuthorizedPage }: MainPageProps) => {
   return (
-    <ProtectedRoute>
+    <ProtectedRoute isAuthorizedPage={isAuthorizedPage}>
       <UserDataProvider>
         <CategoryDataProvider>
           <div className={cx("main-layout")}>

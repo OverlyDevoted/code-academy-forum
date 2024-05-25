@@ -5,6 +5,7 @@ interface AuthContext {
   isLogged: boolean;
   logout: () => void;
   login: (token: string) => void;
+  getToken: () => string | undefined;
 }
 
 export const AuthContext = createContext<AuthContext | null>(null);
@@ -27,6 +28,10 @@ const logout = () => {
   window.dispatchEvent(new StorageEvent("authStorage"));
 };
 
+const getToken = () => {
+  return Cookies.get("jwt");
+};
+
 interface AuthProviderProps {
   children: React.ReactNode;
 }
@@ -45,7 +50,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   }, []);
 
   const providerValue: AuthContext = useMemo(
-    () => ({ login, logout, isLogged }),
+    () => ({ login, logout, isLogged, getToken }),
     [isLogged]
   );
 

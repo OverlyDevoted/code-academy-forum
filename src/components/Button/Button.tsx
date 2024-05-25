@@ -6,8 +6,10 @@ interface ButtonProps {
   label: string;
   onClick: MouseEventHandler<HTMLButtonElement>;
   type?: "button" | "submit";
+  isSecondary?: boolean;
   isLoading?: boolean;
   isDisabled?: boolean;
+  borderRadius?: "xs" | "m" | "xl";
 }
 
 const cx = classNames.bind(styles);
@@ -16,12 +18,16 @@ export const Button = ({
   label,
   onClick,
   type = "button",
+  isSecondary = false,
   isLoading = false,
   isDisabled = false,
+  borderRadius = "xl",
 }: ButtonProps) => {
   return (
     <button
-      className={cx("button")}
+      className={cx("button", `button--${borderRadius}`, {
+        "button--secondary": isSecondary,
+      })}
       onClick={onClick}
       type={type}
       aria-busy={isLoading}

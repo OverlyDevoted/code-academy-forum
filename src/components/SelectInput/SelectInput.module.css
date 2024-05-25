@@ -40,7 +40,7 @@
   color: #808080;
 }
 .select__icon {
-  rotate: 180deg;
+  rotate: 0deg;
   color: #000000;
   position: absolute;
   margin-right: 1rem;
@@ -52,7 +52,7 @@
   z-index: 1;
 }
 .select__input--focused .select__icon {
-  rotate: 0deg;
+  rotate: 180deg;
 }
 .select__list {
   align-content: normal;

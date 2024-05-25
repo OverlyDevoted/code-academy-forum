@@ -1,5 +1,6 @@
 import classNames from "classnames/bind";
 import { useMemo } from "react";
+import { useRouter } from "next/router";
 import { Question, QuestionServer } from "@/types/Backend.types";
 import { Card } from "@/components/Card";
 import { Divider } from "@/components/Divider";
@@ -12,11 +13,16 @@ interface QuestionCardProps {
 }
 
 export const QuestionCard = ({ question }: QuestionCardProps) => {
+  const router = useRouter();
   const questionCreationDate = new Date(question.createdAt);
+
+  const handleNavigationToQuestion = () => {
+    router.push(`/question/${question.id}`);
+  };
 
   return (
     <Card borderRadius="m">
-      <div className={cx("question-card")}>
+      <div className={cx("question-card")} onClick={handleNavigationToQuestion}>
         <h2>{question.question_title}</h2>
         <Divider />
         <div className={cx("question-card__info")}>

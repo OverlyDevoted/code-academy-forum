@@ -6,6 +6,7 @@
   border: solid 1px global.$color-gray-200;
   padding: global.$size-l;
   width: 100%;
+  background-color: global.$color-white;
 
   &--box-radius-xs {
     @include global.border-radius-xs;

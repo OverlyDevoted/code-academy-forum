@@ -35,7 +35,7 @@
   }
 
   &__icon {
-    rotate: 180deg;
+    rotate: 0deg;
     color: global.$color-black;
     position: absolute;
     margin-right: global.$size-m;
@@ -49,7 +49,7 @@
   }
 
   &__input--focused &__icon {
-    rotate: 0deg;
+    rotate: 180deg;
   }
 
   &__list {

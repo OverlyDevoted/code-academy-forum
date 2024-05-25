@@ -1,9 +1,10 @@
 import React, { useMemo, useRef, useState } from "react";
 import classNames from "classnames/bind";
+import { useQuery } from "@tanstack/react-query";
 import { Input } from "../Input";
 import { SelectInput, SelectInputOption } from "../SelectInput/SelectInput";
 import { useCategories } from "@/hooks/useCategories";
-import { Categories } from "@/types/Backend.types";
+import { Categories, QuestionPost } from "@/types/Backend.types";
 import { TextArea } from "../TextArea";
 import {
   QUESTION_TEXT_MAX,
@@ -13,6 +14,9 @@ import {
 } from "./constants/CreateQuestion.constants";
 import { Divider } from "../Divider";
 import { Button } from "../Button";
+import { useAuth } from "@/hooks/useAuth";
+import { postData } from "@/utils/postData";
+import { ErrorType } from "@/types/Fetch.types";
 import styles from "./CreateQuestionForm.module.css";
 
 const cx = classNames.bind(styles);
@@ -31,7 +35,12 @@ const getCategoryOptions = (
   });
 };
 
-export const CreateQuestionForm = () => {
+interface CreateQuestionFormProps {
+  onSuccess: () => void;
+}
+
+export const CreateQuestionForm = ({ onSuccess }: CreateQuestionFormProps) => {
+  const { getToken } = useAuth();
   const { categoryData } = useCategories();
 
   const questionTitleRef = useRef<HTMLInputElement>(null);
@@ -40,6 +49,28 @@ export const CreateQuestionForm = () => {
   const [selectedOption, setSelectedOption] = useState<SelectInputOption>();
   const [questionTextLength, setQuestionTextLength] = useState(0);
   const [questionTitleLength, setQuestionTitleLength] = useState(0);
+
+  const { refetch, data, isRefetching, error } = useQuery({
+    queryKey: ["questionPost"],
+    queryFn: async () => {
+      const token = getToken();
+      const category_id = selectedOption?.value;
+      const question_title = questionTitleRef.current?.value;
+      const question_text = questionTextRef.current?.value;
+      const res = await postData<ErrorType, QuestionPost>(
+        "question",
+        { category_id, question_text, question_title },
+        token
+      );
+      onSuccess();
+      setSelectedOption(undefined);
+      questionTitleRef.current?.setAttribute("value", "");
+      questionTextRef.current?.setAttribute("value", "");
+      return res;
+    },
+    enabled: false,
+    retry: false,
+  });
 
   const isQuestionTitleValid = useMemo(() => {
     return (
@@ -63,8 +94,7 @@ export const CreateQuestionForm = () => {
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     e.preventDefault();
-    const questionText = questionTextRef.current?.value;
-    const questionTitle = questionTitleRef.current?.value;
+    refetch();
   };
 
   return (
@@ -126,7 +156,9 @@ export const CreateQuestionForm = () => {
         isDisabled={
           !isQuestionTextValid || !isQuestionTitleValid || !selectedOption
         }
+        isLoading={isRefetching}
       />
+      {error && <div> error.message </div>}
     </form>
   );
 };

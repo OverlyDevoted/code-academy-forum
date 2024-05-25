@@ -2,23 +2,36 @@
 .button {
   background-color: global.$color-primary-blue;
   border: none;
-  border-radius: global.$size-2xl;
   color: global.$color-white;
   font-size: 1em;
   padding: global.$size-s;
   width: 100%;
+
+  &--secondary {
+    box-shadow: inset 0 0 0 3px global.$color-primary-blue;
+    background-color: global.$color-white;
+    color: global.$color-black;
+
+    &:hover {
+      background-color: global.$color-secondary-blue;
+    }
+  }
+
   &:hover {
     cursor: pointer;
     opacity: 0.75;
   }
+
   &[aria-busy="true"] {
     cursor: not-allowed;
     opacity: 0.75;
   }
+
   &:disabled {
     cursor: not-allowed;
     opacity: 0.75;
   }
+
   &--loader {
     width: 48px;
     height: 48px;
@@ -28,6 +41,16 @@
     display: inline-block;
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
+  }
+
+  &--xs {
+    @include global.border-radius-xs;
+  }
+  &--m {
+    @include global.border-radius-m;
+  }
+  &--xl {
+    @include global.border-radius-xl;
   }
 }
 @keyframes rotation {

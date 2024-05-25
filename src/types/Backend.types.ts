@@ -33,6 +33,8 @@ export type Question = Omit<QuestionServer, "category_id"> & {
   category: Category;
 };
 
+export interface QuestionPost {}
+
 export interface Category {
   id: string;
   category_name: string;
