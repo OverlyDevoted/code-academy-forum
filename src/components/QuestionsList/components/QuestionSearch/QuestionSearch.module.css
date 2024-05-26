@@ -1,0 +1,45 @@
+.question-search {
+  align-content: normal;
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+.question-search__button {
+  border-radius: 1rem;
+  box-shadow: inset 0 0 0 3px #000000;
+  padding: 0.5rem;
+  position: relative;
+}
+.question-search__button:hover {
+  background-color: #7400ff;
+  color: #ffffff;
+}
+.question-search--clicked {
+  background-color: #7400ff;
+  color: #ffffff;
+}
+.question-search--clicked:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+.question-search__buttons {
+  align-content: normal;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+.question-search__checkbox {
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}/*# sourceMappingURL=QuestionSearch.module.css.map */

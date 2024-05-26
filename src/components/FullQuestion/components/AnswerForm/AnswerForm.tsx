@@ -77,6 +77,7 @@ export const AnswerForm = ({ question_id }: AnswerFormProps) => {
               question_id,
               token: getToken() ?? "",
             });
+            if (answerTextRef.current) answerTextRef.current.value = "";
           }}
           isDisabled={!isAnswerTextValid}
           isLoading={isPending}

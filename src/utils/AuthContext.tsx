@@ -1,5 +1,13 @@
-import { createContext, useEffect, useMemo, useState } from "react";
+import { log } from "console";
+import {
+  createContext,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import Cookies from "js-cookie";
+import { useQueryClient } from "@tanstack/react-query";
 
 interface AuthContext {
   isLogged: boolean;
@@ -23,11 +31,6 @@ const login = (token: string) => {
   }
 };
 
-const logout = () => {
-  Cookies.remove("jwt");
-  window.dispatchEvent(new StorageEvent("authStorage"));
-};
-
 const getToken = () => {
   return Cookies.get("jwt");
 };
@@ -38,6 +41,7 @@ interface AuthProviderProps {
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [isLogged, setIsLogged] = useState(false);
+  const queryClient = useQueryClient();
 
   useEffect(() => {
     const handleAuthState = () => {
@@ -49,9 +53,17 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     return () => window.removeEventListener("authStorage", handleAuthState);
   }, []);
 
+  const logout = useCallback(() => {
+    queryClient.removeQueries({ queryKey: ["login"], exact: true });
+    queryClient.removeQueries({ queryKey: ["userData"], exact: true });
+
+    Cookies.remove("jwt");
+    window.dispatchEvent(new StorageEvent("authStorage"));
+  }, [queryClient]);
+
   const providerValue: AuthContext = useMemo(
     () => ({ login, logout, isLogged, getToken }),
-    [isLogged]
+    [isLogged, logout]
   );
 
   return (

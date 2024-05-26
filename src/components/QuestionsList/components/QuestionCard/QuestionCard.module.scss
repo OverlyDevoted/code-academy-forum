@@ -41,4 +41,12 @@
     right: 0;
     transform: translate(80%, -80%);
   }
+
+  &__header {
+    word-wrap: break-word;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
 }

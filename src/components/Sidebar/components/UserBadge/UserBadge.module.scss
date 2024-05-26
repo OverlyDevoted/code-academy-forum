@@ -5,7 +5,6 @@
   @include global.flexbox($alignItems: center, $gap: 1rem);
 
   background-color: global.$color-gray-200;
-  cursor: pointer;
   padding: global.$size-s;
   width: 100%;
 
@@ -20,12 +19,25 @@
     flex-shrink: 0;
   }
 
+  &__logout {
+    @include global.border-radius-m;
+
+    background-color: global.$color-white;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+
+    &:hover {
+      filter: invert(100%);
+    }
+  }
+
   &__username {
     font-weight: 600;
     word-wrap: break-word;
     -webkit-box-orient: vertical;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 1;
     overflow: hidden;
   }
 }

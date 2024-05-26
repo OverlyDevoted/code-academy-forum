@@ -25,7 +25,7 @@ export const Sidebar = () => {
           </Link>
           <UserBadge
             username={
-              userData
+              userData && isLogged
                 ? `${userData.first_name} ${userData.second_name}`
                 : undefined
             }

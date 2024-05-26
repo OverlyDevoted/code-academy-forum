@@ -30,7 +30,9 @@ export const QuestionCard = ({ question }: QuestionCardProps) => {
               <Badge label="NEW!" />
             </div>
           )}
-        <h2>{question.question_title}</h2>
+        <h2 className={cx("question-card__header")}>
+          {question.question_title}
+        </h2>
         <Divider />
         <div className={cx("question-card__info")}>
           <span

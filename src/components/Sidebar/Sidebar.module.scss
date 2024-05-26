@@ -2,7 +2,7 @@
 
 .sidebar {
   @include global.flexbox($direction: column);
-  max-width: 230px;
+  width: 230px;
   flex-shrink: 0;
   position: sticky;
   top: 0;
