@@ -53,6 +53,11 @@
 
     &:hover {
       background-color: global.$color-gray-200;
+      cursor: pointer;
     }
+  }
+
+  &__answered {
+    font-weight: 700;
   }
 }

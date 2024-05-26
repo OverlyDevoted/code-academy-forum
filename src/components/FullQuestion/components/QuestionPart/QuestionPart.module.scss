@@ -52,6 +52,11 @@
 
     &:hover {
       background-color: global.$color-gray-200;
+      cursor: pointer;
     }
+  }
+
+  &__asked {
+    font-weight: 700;
   }
 }

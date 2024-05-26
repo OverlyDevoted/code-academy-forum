@@ -35,7 +35,7 @@ export const Sidebar = () => {
           <div className={cx("sidebar__header")}>
             <div className={cx("sidebar__header-content")}>
               <span>Your questions</span>
-              <Link className={cx("sidebar__new-post-button")} href="create">
+              <Link className={cx("sidebar__new-post-button")} href="/create">
                 <NewPostIcon />
               </Link>
             </div>

@@ -71,4 +71,8 @@
 }
 .answer-card__icon:hover {
   background-color: #dfdfdf;
+  cursor: pointer;
+}
+.answer-card__answered {
+  font-weight: 700;
 }/*# sourceMappingURL=AnswerCard.module.css.map */

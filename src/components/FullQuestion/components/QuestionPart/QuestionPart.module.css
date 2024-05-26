@@ -65,4 +65,8 @@
 }
 .question-part__icon:hover {
   background-color: #dfdfdf;
+  cursor: pointer;
+}
+.question-part__asked {
+  font-weight: 700;
 }/*# sourceMappingURL=QuestionPart.module.css.map */

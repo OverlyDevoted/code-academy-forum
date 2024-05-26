@@ -39,7 +39,7 @@ export const QuestionPart = ({ question }: QuestionPart) => {
 
         <div className={cx("question-part__extras")}>
           <div className={cx("question-part__indicator")}>
-            <span>Asked on</span>
+            <span className={cx("question-part__asked")}>Asked on</span>
             <span>{new Date(question.createdAt).toDateString()}</span>
           </div>
           {isOwner && (

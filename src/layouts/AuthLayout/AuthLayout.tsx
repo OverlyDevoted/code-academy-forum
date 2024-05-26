@@ -13,16 +13,7 @@ export const AuthLayout = ({ children }: AuthPageProps) => {
   return (
     <ProtectedRoute isAuthPage>
       <main className={cx("container")}>
-        <figure className={cx("container__hero-container")}>
-          <Image
-            src={
-              "https://codeacademy.online/static/media/register_illustration.66450890.svg"
-            }
-            alt="Cartoonish drawing of a tall man filling up a register form"
-            layout="fill"
-            className={cx("container__hero")}
-          />
-        </figure>
+        <figure className={cx("container__hero-container")}></figure>
         <section className={cx("container__form")}>{children}</section>
       </main>
     </ProtectedRoute>
