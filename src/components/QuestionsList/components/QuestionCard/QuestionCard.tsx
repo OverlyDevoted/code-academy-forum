@@ -5,6 +5,7 @@ import { Card } from "@/components/Card";
 import { Divider } from "@/components/Divider";
 import { LIGHTNESS, SATURATION } from "@/constants/Helper.constants";
 import { Badge } from "@/components/Badge";
+import { isSameDate } from "@/utils/checkIfSameDay";
 import styles from "./QuestionCard.module.css";
 
 const cx = classNames.bind(styles);
@@ -23,11 +24,12 @@ export const QuestionCard = ({ question }: QuestionCardProps) => {
   return (
     <Card borderRadius="m" onHover>
       <div className={cx("question-card")} onClick={handleNavigationToQuestion}>
-        {question.numberOfAnswers === 0 && (
-          <div className={cx("question-card__badge")}>
-            <Badge label="NEW!" />
-          </div>
-        )}
+        {isSameDate(new Date(question.createdAt), new Date()) &&
+          question.numberOfAnswers > 0 && (
+            <div className={cx("question-card__badge")}>
+              <Badge label="NEW!" />
+            </div>
+          )}
         <h2>{question.question_title}</h2>
         <Divider />
         <div className={cx("question-card__info")}>
