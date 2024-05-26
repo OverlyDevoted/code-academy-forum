@@ -25,7 +25,7 @@ export const QuestionCard = ({ question }: QuestionCardProps) => {
     <Card borderRadius="m" onHover>
       <div className={cx("question-card")} onClick={handleNavigationToQuestion}>
         {isSameDate(new Date(question.createdAt), new Date()) &&
-          question.numberOfAnswers > 0 && (
+          question.numberOfAnswers === 0 && (
             <div className={cx("question-card__badge")}>
               <Badge label="NEW!" />
             </div>

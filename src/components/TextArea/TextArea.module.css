@@ -9,9 +9,10 @@
   border-radius: 0.5rem;
   border: solid 1px #9f9f9f;
   background-color: #ffffff;
-  padding: 1rem;
   font-size: 1rem;
-  width: 100%;
-  text-align: left;
   resize: vertical;
+  padding: 1rem;
+  text-align: left;
+  white-space: pre-wrap;
+  width: 100%;
 }/*# sourceMappingURL=TextArea.module.css.map */

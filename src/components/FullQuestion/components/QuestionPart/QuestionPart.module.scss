@@ -30,6 +30,9 @@
 
   &__paragraph {
     grid-area: 2 / 2 / 3 / 3;
+    font-family: inherit;
+    white-space: pre-wrap;
+    text-align: justify;
   }
 
   &__extras {

@@ -25,7 +25,6 @@ export const QuestionPart = ({ question }: QuestionPart) => {
 
   const { isError, mutate } = useMutation({
     mutationFn: (variable: { question_id: string; token: string }) => {
-      console.log(variable);
       return deleteData(`question/${variable.question_id}`, variable.token);
     },
     onSuccess: (data, variables, context) => {
@@ -51,9 +50,9 @@ export const QuestionPart = ({ question }: QuestionPart) => {
           {question.question_title}
           <span className={cx("question-part__username")}>{username}</span>
         </h1>
-        <p className={cx("question-part__paragraph")}>
+        <pre className={cx("question-part__paragraph")}>
           {question.question_text}
-        </p>
+        </pre>
 
         <div className={cx("question-part__extras")}>
           <div className={cx("question-part__indicator")}>

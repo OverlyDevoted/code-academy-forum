@@ -61,3 +61,8 @@ export interface QuestionAnswerServer {
   question: QuestionServer;
   answers: Answer[];
 }
+
+export interface AnswerPost {
+  question_id: string;
+  answer_text: string;
+}

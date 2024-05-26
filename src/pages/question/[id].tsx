@@ -17,17 +17,17 @@ const DynamicQuestionPage = () => {
     retry: false,
   });
 
-  if (isRefetching || isLoading) return <div>Loading...</div>;
+  const renderComponent = () => {
+    if (isRefetching || isLoading) return <div>Loading...</div>;
 
-  if (error) return <div>{error.message}</div>;
+    if (error) return <div>{error.message}</div>;
 
-  if (!data) return <div>Data is missing</div>;
+    if (!data) return <div>Data is missing</div>;
 
-  return (
-    <MainLayout>
-      <FullQuestion question={data.question} answers={data.answers} />
-    </MainLayout>
-  );
+    return <FullQuestion question={data.question} answers={data.answers} />;
+  };
+
+  return <MainLayout>{renderComponent()}</MainLayout>;
 };
 
 export default DynamicQuestionPage;

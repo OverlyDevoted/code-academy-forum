@@ -5,9 +5,13 @@
   gap: global.$size-m;
 
   &__answer {
-    grid-area: 2 / 2 / 3 / 3;
     font-weight: 500;
     font-size: global.$size-m;
+    font-family: inherit;
+    grid-area: 2 / 2 / 3 / 3;
+
+    white-space: pre-wrap;
+    text-align: justify;
   }
 
   &__user-icon {

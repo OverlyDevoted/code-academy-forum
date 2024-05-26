@@ -1,12 +1,11 @@
 export function isSameDate(date1: Date, date2: Date) {
-  // Create Date objects from the input if they are not already Date objects
-  const d1 = new Date(date1);
-  const d2 = new Date(date2);
-
   // Compare the year, month, and day
-  return (
-    d1.getFullYear() === d2.getFullYear() &&
-    d1.getMonth() === d2.getMonth() &&
-    d1.getDate() === d2.getDate()
-  );
+  //   console.log(date1.getFullYear(), date1.getMonth(), date1.getDate());
+  //   console.log(date2.getFullYear(), date2.getMonth(), date2.getDate());
+  const result =
+    date1.getFullYear() === date2.getFullYear() &&
+    date1.getMonth() === date2.getMonth() &&
+    date1.getDate() === date2.getDate();
+  //   console.log(result);
+  return result;
 }

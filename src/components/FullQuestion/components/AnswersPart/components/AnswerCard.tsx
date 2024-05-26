@@ -33,7 +33,7 @@ export const AnswerCard = ({ answer }: AnswerCardProps) => {
           <span>{username[0]}</span>
         </span>
         <h3>{username}</h3>
-        <p className={cx("answer-card__answer")}>{answer.answer_text}</p>
+        <pre className={cx("answer-card__answer")}>{answer.answer_text}</pre>
         <div className={cx("answer-card__extras")}>
           <div className={cx("answer-card__indicator")}>
             <span className={cx("answer-card__answered")}>Answered on</span>

@@ -24,7 +24,7 @@ export const FullQuestion = ({ question, answers }: FullQuestionProps) => {
       {isLogged && (
         <>
           <Divider />
-          <AnswerForm />
+          <AnswerForm question_id={question.id} />
         </>
       )}
     </section>
