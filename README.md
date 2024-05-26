@@ -19,8 +19,8 @@ Funkcionalumas:
 ## Atsakymai
 
 - [x] Peržiūrėti klausimų atsakymus
-- [ ] Atsakyti į užduotą klausimą (tik prisijungus) // EXTRA
-- [ ] Ištrinti atsakymą (tik prisijungus) // EXTRA
+- [x] Atsakyti į užduotą klausimą (tik prisijungus) // EXTRA
+- [x] Ištrinti atsakymą (tik prisijungus) // EXTRA
 - [ ] Žymėti/atžymėti patinkačius ir nepatinkančius atsakymus (like/dislike) (tik prisijungus)
 
 Forumo projektas sudeda iš frontend'o ir backend'o dalių:
@@ -38,7 +38,7 @@ Frontend'e naudosime React. Kaip ir backend'e node express, taip pat galima naud
 
 - [x] GET /question/:id/answers
 - [x] POST /question/:id/answers
-- [ ] DELETE /answer/:id
+- [x] DELETE /answer/:id
 
 ### Frontend'as
 
@@ -68,3 +68,8 @@ user: first_name, second_name, email, password, id,
 category: category_name, id
 question: question_text, date, id, user_id, category_id
 answer: id, answer_text, date, liked_by, question_id
+
+## Papildomos uzduotys
+
+- [ ] Header responsiveness
+- [ ] Duomenu trinimui dialogai

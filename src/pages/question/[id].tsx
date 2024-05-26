@@ -18,7 +18,7 @@ const DynamicQuestionPage = () => {
   });
 
   const renderComponent = () => {
-    if (isRefetching || isLoading) return <div>Loading...</div>;
+    if ((isRefetching || isLoading) && !data) return <div>Loading...</div>;
 
     if (error) return <div>{error.message}</div>;
 

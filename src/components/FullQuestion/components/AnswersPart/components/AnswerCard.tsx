@@ -1,5 +1,7 @@
 import React from "react";
 import classNames from "classnames/bind";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import router from "next/router";
 import { Answer } from "@/types/Backend.types";
 import { Card } from "@/components/Card";
 import { LIGHTNESS, SATURATION } from "@/constants/Helper.constants";
@@ -8,6 +10,7 @@ import ThumbsDownIcon from "@/assets/icons/thumbs-down.svg";
 import TrashCan from "@/assets/icons/trash.svg";
 import { useUserDatta } from "@/hooks/useUserData";
 import { useAuth } from "@/hooks/useAuth";
+import { deleteData } from "@/utils/deleteData";
 import styles from ".//AnswerCard.module.css";
 
 const cx = classNames.bind(styles);
@@ -18,6 +21,18 @@ interface AnswerCardProps {
 export const AnswerCard = ({ answer }: AnswerCardProps) => {
   const { isLogged } = useAuth();
   const { userData } = useUserDatta();
+  const { getToken } = useAuth();
+  const queryClient = useQueryClient();
+
+  const { isError, mutate } = useMutation({
+    mutationFn: (variable: { answer_id: string; token: string }) => {
+      return deleteData(`answer/${variable.answer_id}`, variable.token);
+    },
+    onSuccess: (data, variables, context) => {
+      queryClient.invalidateQueries({ queryKey: ["questionPage"] });
+    },
+  });
+
   const { hue, first_name, second_name } = answer.user;
   const username = `${first_name} ${second_name}`;
   const isOwner = userData?.id === answer.user.id;
@@ -55,7 +70,13 @@ export const AnswerCard = ({ answer }: AnswerCardProps) => {
                 <div
                   className={cx("answer-card__action", "answer-card__delete")}
                 >
-                  <TrashCan className={cx("answer-card__icon")} />
+                  <TrashCan
+                    className={cx("answer-card__icon")}
+                    onClick={() => {
+                      mutate({ answer_id: answer.id, token: getToken() ?? "" });
+                    }}
+                  />
+                  {isError && <div>Unable to delete answer</div>}
                 </div>
               )}
             </div>
