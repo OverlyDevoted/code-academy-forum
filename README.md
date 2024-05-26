@@ -21,7 +21,7 @@ Funkcionalumas:
 - [x] Peržiūrėti klausimų atsakymus
 - [x] Atsakyti į užduotą klausimą (tik prisijungus) // EXTRA
 - [x] Ištrinti atsakymą (tik prisijungus) // EXTRA
-- [ ] Žymėti/atžymėti patinkačius ir nepatinkančius atsakymus (like/dislike) (tik prisijungus)
+- [x] Žymėti/atžymėti patinkačius ir nepatinkančius atsakymus (like/dislike) (tik prisijungus)
 
 Forumo projektas sudeda iš frontend'o ir backend'o dalių:
 Backend'e naudosime NodeJS Express, MongoDB arba MySQL ir kelis papildomus npm paketus, kuries palengvins darbą.
@@ -73,3 +73,4 @@ answer: id, answer_text, date, liked_by, question_id
 
 - [ ] Header responsiveness
 - [ ] Duomenu trinimui dialogai
+- [ ] Optimisitc UI update (when liking)

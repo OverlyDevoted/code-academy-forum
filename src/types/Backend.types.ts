@@ -66,3 +66,7 @@ export interface AnswerPost {
   question_id: string;
   answer_text: string;
 }
+
+export interface AnswerLikePatch {
+  is_like: boolean;
+}

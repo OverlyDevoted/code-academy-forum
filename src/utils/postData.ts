@@ -4,12 +4,13 @@ import { ErrorType } from "@/types/Fetch.types";
 export const postData = async <RESPONSE_TYPE, BODY_TYPE extends object>(
   path: string,
   body: BODY_TYPE,
-  token: string | undefined
+  token: string | undefined,
+  isPatch?: boolean
 ): Promise<RESPONSE_TYPE> => {
   if (!token) throw new Error("Must be authorized to post data");
 
   const res = await fetch(`${BASE_URL}${path}`, {
-    method: "POST",
+    method: isPatch ? "PATCH" : "POST",
     body: JSON.stringify(body),
     headers: {
       "Content-Type": "application/json",
