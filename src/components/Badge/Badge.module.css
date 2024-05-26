@@ -1,0 +1,10 @@
+.badge {
+  border-radius: 1.5rem;
+  background-color: #3acab9;
+  color: #ffffff;
+  font-weight: 300;
+  font-size: 1.25rem;
+  padding: 0.5rem;
+  width: -moz-fit-content;
+  width: fit-content;
+}/*# sourceMappingURL=Badge.module.css.map */

@@ -4,11 +4,13 @@
   @include global.flexbox($direction: column, $gap: global.$size-s);
 
   height: fit-content;
+  position: relative;
 
   &__info {
     @include global.flexbox(
       $gap: global.$size-s,
-      $justifyContent: space-between
+      $justifyContent: space-between,
+      $alignItems: center
     );
   }
 
@@ -18,5 +20,25 @@
     color: global.$color-white;
     display: inline-block;
     padding: global.$size-2xs;
+  }
+
+  &__indicator {
+    @include global.flexbox($direction: column, $gap: global.$size-2xs);
+    min-width: 130px;
+  }
+
+  &__indicator-header {
+    font-weight: 700;
+  }
+
+  &__extra {
+    @include global.flexbox($gap: global.$size-m);
+  }
+
+  &__badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(80%, -80%);
   }
 }

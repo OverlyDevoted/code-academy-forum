@@ -8,10 +8,11 @@
   justify-content: flex-start;
   height: -moz-fit-content;
   height: fit-content;
+  position: relative;
 }
 .question-card__info {
   align-content: normal;
-  align-items: stretch;
+  align-items: center;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -23,4 +24,32 @@
   color: #ffffff;
   display: inline-block;
   padding: 0.25rem;
+}
+.question-card__indicator {
+  align-content: normal;
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 0.25rem;
+  justify-content: flex-start;
+  min-width: 130px;
+}
+.question-card__indicator-header {
+  font-weight: 700;
+}
+.question-card__extra {
+  align-content: normal;
+  align-items: stretch;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+.question-card__badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(80%, -80%);
 }/*# sourceMappingURL=QuestionCard.module.css.map */

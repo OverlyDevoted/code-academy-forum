@@ -13,8 +13,8 @@ Funkcionalumas:
 
 - [x] Peržiūrėti klausimų sąrašą.
 - [x] Užduoti naują klausimą (tik prisijungus)
-- [ ] Ištrinti klausimą (tik prisiijungus)
-- [ ] Filtruoti į atsakytus arba neatsakytus klausimus // EXTRA
+- [x] Ištrinti klausimą (tik prisiijungus)
+- [x] Filtruoti į atsakytus arba neatsakytus klausimus // EXTRA
 
 ## Atsakymai
 
@@ -34,7 +34,7 @@ Frontend'e naudosime React. Kaip ir backend'e node express, taip pat galima naud
 
 - [x] GET /questions
 - [x] POST /question
-- [ ] DELETE /question/:id
+- [x] DELETE /question/:id
 
 - [x] GET /question/:id/answers
 - [x] POST /question/:id/answers

@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import classNames from "classnames/bind";
 import { MainLayout } from "@/layouts/MainLayout";
 import { QuestionCard } from "./components/QuestionCard";
@@ -19,24 +19,35 @@ const fetchPosts = () => {
 export const QuestionList = () => {
   const { data } = useQuery({ queryKey: ["globalPosts"], queryFn: fetchPosts });
   const { categoryData, isFetched, isError } = useCategories();
+  const [isSortedByUnanswered, setIsSortedByUnanswered] = useState(false);
 
   const renderQuestionCards = useMemo(() => {
     if (!data || !categoryData) return null;
-    return data.questions.map((questionObject) => {
+
+    const filtered = data.questions.filter(
+      (question) => !isSortedByUnanswered || question.numberOfAnswers === 0
+    );
+
+    return filtered.map((questionObject) => {
       const foundCategory = categoryData.categories.find(
         (category) => category.id === questionObject.category_id
       ) as Category;
       const question: Question = { ...questionObject, category: foundCategory };
       return <QuestionCard key={questionObject.id} question={question} />;
     });
-  }, [data, categoryData]);
+  }, [data, categoryData, isSortedByUnanswered]);
 
   return (
     <div className={cx("container")}>
       <div className={cx("container__header")}>
         <h1>Questions</h1>
       </div>
-      <QuestionSearch />
+      <QuestionSearch
+        checked={isSortedByUnanswered}
+        onChange={(e) => {
+          setIsSortedByUnanswered(!isSortedByUnanswered);
+        }}
+      />
       <Divider />
       <div className={cx("container__list")}>
         {data ? renderQuestionCards : "Loading..."}

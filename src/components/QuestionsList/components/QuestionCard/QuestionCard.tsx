@@ -4,6 +4,7 @@ import { Question } from "@/types/Backend.types";
 import { Card } from "@/components/Card";
 import { Divider } from "@/components/Divider";
 import { LIGHTNESS, SATURATION } from "@/constants/Helper.constants";
+import { Badge } from "@/components/Badge";
 import styles from "./QuestionCard.module.css";
 
 const cx = classNames.bind(styles);
@@ -22,6 +23,11 @@ export const QuestionCard = ({ question }: QuestionCardProps) => {
   return (
     <Card borderRadius="m" onHover>
       <div className={cx("question-card")} onClick={handleNavigationToQuestion}>
+        {question.numberOfAnswers === 0 && (
+          <div className={cx("question-card__badge")}>
+            <Badge label="NEW!" />
+          </div>
+        )}
         <h2>{question.question_title}</h2>
         <Divider />
         <div className={cx("question-card__info")}>
@@ -33,9 +39,20 @@ export const QuestionCard = ({ question }: QuestionCardProps) => {
           >
             {question.category.category_name}
           </span>
-          <span className={cx("question-card__asked-at")}>
-            {questionCreationDate.toDateString()}
-          </span>
+          <div className={cx("question-card__extra")}>
+            <span className={cx("question-card__indicator")}>
+              <span className={cx("question-card__indicator-header")}>
+                Answers
+              </span>
+              <span>{question.numberOfAnswers}</span>
+            </span>
+            <span className={cx("question-card__indicator")}>
+              <span className={cx("question-card__indicator-header")}>
+                Asked at
+              </span>
+              <span>{questionCreationDate.toDateString()}</span>
+            </span>
+          </div>
         </div>
       </div>
     </Card>

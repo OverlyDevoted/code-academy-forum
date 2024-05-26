@@ -1,0 +1,10 @@
+@use "./../../styles/global";
+.badge {
+  @include global.border-radius-xl;
+  background-color: global.$color-primary-teal;
+  color: global.$color-white;
+  font-weight: 300;
+  font-size: global.$size-l;
+  padding: global.$size-xs;
+  width: fit-content;
+}

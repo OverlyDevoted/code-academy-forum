@@ -1,11 +1,15 @@
 import React from "react";
 import classNames from "classnames/bind";
+import { useMutation } from "@tanstack/react-query";
+import { useRouter } from "next/router";
 import { QuestionServer } from "@/types/Backend.types";
 import styles from "./QuestionPart.module.scss";
 import { Card } from "@/components/Card";
 import { useUserDatta } from "@/hooks/useUserData";
 import { SATURATION, LIGHTNESS } from "@/constants/Helper.constants";
 import TrashCan from "@/assets/icons/trash.svg";
+import { deleteData } from "@/utils/deleteData";
+import { useAuth } from "@/hooks/useAuth";
 
 const cx = classNames.bind(styles);
 
@@ -14,10 +18,24 @@ interface QuestionPart {
 }
 
 export const QuestionPart = ({ question }: QuestionPart) => {
+  const { getToken } = useAuth();
   const { userData } = useUserDatta();
+  const router = useRouter();
   const { id, first_name, second_name, hue } = question.user;
+
+  const { isError, mutate } = useMutation({
+    mutationFn: (variable: { question_id: string; token: string }) => {
+      console.log(variable);
+      return deleteData(`question/${variable.question_id}`, variable.token);
+    },
+    onSuccess: (data, variables, context) => {
+      router.push("/");
+    },
+  });
+
   const isOwner = question.user.id === userData?.id;
   const username = `${first_name} ${second_name}`;
+
   return (
     <Card>
       <section className={cx("question-part")}>
@@ -44,7 +62,15 @@ export const QuestionPart = ({ question }: QuestionPart) => {
           </div>
           {isOwner && (
             <div>
-              <TrashCan className={cx("question-part__icon")} />
+              <TrashCan
+                className={cx("question-part__icon")}
+                onClick={() => {
+                  mutate({ question_id: question.id, token: getToken() ?? "" });
+                }}
+              />
+              {isError && (
+                <span>Something went wrong while deleting question</span>
+              )}
             </div>
           )}
         </div>
