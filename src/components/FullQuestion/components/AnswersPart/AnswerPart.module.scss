@@ -1,0 +1,4 @@
+@use "./../../../../styles/global";
+.answer-part {
+  @include global.flexbox($direction: column, $gap: global.$size-m);
+}

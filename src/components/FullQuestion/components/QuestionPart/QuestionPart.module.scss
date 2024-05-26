@@ -1,0 +1,57 @@
+@use "./../../../../styles/global";
+
+.question-part {
+  white-space: pre-wrap;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: global.$size-m;
+
+  &__header {
+    @include global.flexbox($direction: column, $gap: global.$size-xs);
+    font-size: global.$size-3xl;
+  }
+
+  &__username {
+    font-size: global.$size-m;
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  &__user-icon {
+    @include global.border-radius-circle;
+    @include global.dimensions(48px, 48px);
+    @include global.flexbox($justifyContent: center, $alignItems: center);
+
+    color: global.$color-white;
+    font-weight: 600;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  &__paragraph {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+
+  &__extras {
+    @include global.flexbox(
+      $justifyContent: space-between,
+      $alignItems: flex-end
+    );
+    grid-area: 3 / 1 / 4 / 3;
+  }
+
+  &__indicator {
+    @include global.flexbox($direction: column);
+  }
+
+  &__icon {
+    @include global.dimensions(28px, 28px);
+    @include global.border-radius-circle;
+
+    padding: global.$size-3xs;
+
+    &:hover {
+      background-color: global.$color-gray-200;
+    }
+  }
+}

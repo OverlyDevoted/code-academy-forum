@@ -1,0 +1,58 @@
+@use "./../../../../../styles/global";
+.answer-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: global.$size-m;
+
+  &__answer {
+    grid-area: 2 / 2 / 3 / 3;
+    font-weight: 500;
+    font-size: global.$size-m;
+  }
+
+  &__user-icon {
+    @include global.border-radius-circle;
+    @include global.dimensions(48px, 48px);
+    @include global.flexbox($justifyContent: center, $alignItems: center);
+
+    color: global.$color-white;
+    font-weight: 600;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  &__extras {
+    grid-area: 3 / 1 / 4 / 3;
+
+    @include global.flexbox(
+      $justifyContent: space-between,
+      $alignItems: flex-end
+    );
+  }
+
+  &__actions {
+    @include global.flexbox($gap: global.$size-s);
+  }
+
+  &__indicator {
+    @include global.flexbox($direction: column);
+  }
+
+  &__action {
+    @include global.flexbox($alignItems: center);
+
+    font-weight: 700;
+    font-size: global.$size-l;
+  }
+
+  &__icon {
+    @include global.dimensions(28px, 28px);
+    @include global.border-radius-circle;
+
+    padding: global.$size-3xs;
+
+    &:hover {
+      background-color: global.$color-gray-200;
+    }
+  }
+}

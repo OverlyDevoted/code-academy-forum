@@ -23,6 +23,7 @@ export interface QuestionServer {
   updatedAt: string;
   user: QuestionUser;
   numberOfAnswers: number;
+  user_id?: string;
 }
 
 export interface QuestionsResponse {

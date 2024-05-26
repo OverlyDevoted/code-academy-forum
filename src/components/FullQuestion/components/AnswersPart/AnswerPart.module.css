@@ -1,0 +1,9 @@
+.answer-part {
+  align-content: normal;
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  justify-content: flex-start;
+}/*# sourceMappingURL=AnswerPart.module.css.map */

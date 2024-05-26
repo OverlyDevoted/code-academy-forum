@@ -17,6 +17,7 @@ import { Button } from "../Button";
 import { useAuth } from "@/hooks/useAuth";
 import { postData } from "@/utils/postData";
 import { ErrorType } from "@/types/Fetch.types";
+import { Card } from "../Card";
 import styles from "./CreateQuestionForm.module.css";
 
 const cx = classNames.bind(styles);
@@ -98,67 +99,69 @@ export const CreateQuestionForm = ({ onSuccess }: CreateQuestionFormProps) => {
   };
 
   return (
-    <form className={cx("question-form")}>
-      <div className={cx("question-form__inputs")}>
-        <h1>Ask a Question</h1>
-        <p className={cx("question-form__paragraph")}>
-          Ask any question from a range of different categories!
-        </p>
-      </div>
-      <Divider />
-      <section className={cx("question-form__inputs")}>
-        <div className={cx("question-form__input-container")}>
-          <h2 id="question-title-label">Question title</h2>
-          <Input
-            type="text"
-            id="question-title"
-            ref={questionTitleRef}
-            placeholder="What is your question about?"
-            onChange={(e) => {
-              setQuestionTitleLength(e.target.value.length);
-            }}
-          />
+    <Card>
+      <form className={cx("question-form")}>
+        <div className={cx("question-form__inputs")}>
+          <h1>Ask a Question</h1>
+          <p className={cx("question-form__paragraph")}>
+            Ask any question from a range of different categories!
+          </p>
         </div>
-        <div className={cx("question-form__input-container")}>
-          <h2>Question category</h2>
-          <SelectInput
-            onChange={setSelectedOption}
-            value={selectedOption}
-            options={categoryOptions}
-            placeholder="Select a category"
-          ></SelectInput>
-        </div>
-        <div className={cx("question-form__input-container")}>
-          <h2>Question text</h2>
-          <div>
-            <TextArea
-              ref={questionTextRef}
-              id="question_text"
+        <Divider />
+        <section className={cx("question-form__inputs")}>
+          <div className={cx("question-form__input-container")}>
+            <h2 id="question-title-label">Question title</h2>
+            <Input
+              type="text"
+              id="question-title"
+              ref={questionTitleRef}
+              placeholder="What is your question about?"
               onChange={(e) => {
-                setQuestionTextLength(e.target.value.length);
+                setQuestionTitleLength(e.target.value.length);
               }}
-              placeholder="What is your question?"
             />
-            <div
-              className={cx("question-form__textarea-counter")}
-              aria-invalid={!isQuestionTextValid}
-            >
-              {questionTextLength}
+          </div>
+          <div className={cx("question-form__input-container")}>
+            <h2>Question category</h2>
+            <SelectInput
+              onChange={setSelectedOption}
+              value={selectedOption}
+              options={categoryOptions}
+              placeholder="Select a category"
+            ></SelectInput>
+          </div>
+          <div className={cx("question-form__input-container")}>
+            <h2>Question text</h2>
+            <div>
+              <TextArea
+                ref={questionTextRef}
+                id="question_text"
+                onChange={(e) => {
+                  setQuestionTextLength(e.target.value.length);
+                }}
+                placeholder="What is your question?"
+              />
+              <div
+                className={cx("question-form__textarea-counter")}
+                aria-invalid={!isQuestionTextValid}
+              >
+                {questionTextLength}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <Button
-        label="POST QUESTION!"
-        type="submit"
-        onClick={handleQuestionPost}
-        isDisabled={
-          !isQuestionTextValid || !isQuestionTitleValid || !selectedOption
-        }
-        isLoading={isRefetching}
-      />
-      {error && <div> error.message </div>}
-    </form>
+        <Button
+          label="POST QUESTION!"
+          type="submit"
+          onClick={handleQuestionPost}
+          isDisabled={
+            !isQuestionTextValid || !isQuestionTitleValid || !selectedOption
+          }
+          isLoading={isRefetching}
+        />
+        {error && <div> error.message </div>}
+      </form>
+    </Card>
   );
 };
