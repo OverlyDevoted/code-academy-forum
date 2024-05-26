@@ -12,13 +12,13 @@ Funkcionalumas:
 ## Klausimai
 
 - [x] Peržiūrėti klausimų sąrašą.
-- [ ] Užduoti naują klausimą (tik prisijungus)
+- [x] Užduoti naują klausimą (tik prisijungus)
 - [ ] Ištrinti klausimą (tik prisiijungus)
 - [ ] Filtruoti į atsakytus arba neatsakytus klausimus // EXTRA
 
 ## Atsakymai
 
-- [ ] Peržiūrėti klausimų atsakymus
+- [x] Peržiūrėti klausimų atsakymus
 - [ ] Atsakyti į užduotą klausimą (tik prisijungus) // EXTRA
 - [ ] Ištrinti atsakymą (tik prisijungus) // EXTRA
 - [ ] Žymėti/atžymėti patinkačius ir nepatinkančius atsakymus (like/dislike) (tik prisijungus)

@@ -46,3 +46,17 @@ export interface Category {
 export interface Categories {
   categories: Category[];
 }
+
+export interface Answer {
+  id: string;
+  answer_text: string;
+  liked_by: string[];
+  disliked_by: string[];
+  createdAt: string;
+  user: User;
+}
+
+export interface QuestionAnswerServer {
+  question: QuestionServer;
+  answers: Answer[];
+}

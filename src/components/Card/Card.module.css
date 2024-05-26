@@ -22,4 +22,8 @@
 }
 .card--full-height {
   height: 100%;
+}
+.card--on-hover:hover {
+  box-shadow: inset 0 0 0 3px #000000;
+  cursor: pointer;
 }/*# sourceMappingURL=Card.module.css.map */

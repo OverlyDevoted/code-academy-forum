@@ -31,4 +31,11 @@
   &--full-height {
     height: 100%;
   }
+
+  &--on-hover {
+    &:hover {
+      box-shadow: inset 0 0 0 3px global.$color-black;
+      cursor: pointer;
+    }
+  }
 }

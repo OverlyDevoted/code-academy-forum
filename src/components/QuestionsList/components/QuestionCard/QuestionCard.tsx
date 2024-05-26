@@ -1,7 +1,6 @@
 import classNames from "classnames/bind";
-import { useMemo } from "react";
 import { useRouter } from "next/router";
-import { Question, QuestionServer } from "@/types/Backend.types";
+import { Question } from "@/types/Backend.types";
 import { Card } from "@/components/Card";
 import { Divider } from "@/components/Divider";
 import { LIGHTNESS, SATURATION } from "@/constants/Helper.constants";
@@ -21,7 +20,7 @@ export const QuestionCard = ({ question }: QuestionCardProps) => {
   };
 
   return (
-    <Card borderRadius="m">
+    <Card borderRadius="m" onHover>
       <div className={cx("question-card")} onClick={handleNavigationToQuestion}>
         <h2>{question.question_title}</h2>
         <Divider />

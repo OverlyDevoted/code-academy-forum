@@ -9,6 +9,7 @@ interface CardProps {
   borderRadius?: "m" | "xs";
   boxShadow?: "m" | "s" | "xs";
   isFullHeight?: boolean;
+  onHover?: boolean;
 }
 
 export const Card = ({
@@ -16,6 +17,7 @@ export const Card = ({
   borderRadius = "xs",
   boxShadow = "xs",
   isFullHeight,
+  onHover,
 }: CardProps) => {
   return (
     <div
@@ -25,6 +27,7 @@ export const Card = ({
         `card--box-shadow-${boxShadow}`,
         {
           "card--full-height": isFullHeight,
+          "card--on-hover": onHover,
         }
       )}
     >
