@@ -1,4 +1,16 @@
 @use "./../../../../styles/global";
 .answer-part {
-  @include global.flexbox($direction: column, $gap: global.$size-m);
+  @include global.flexbox($direction: column, $gap: global.$size-l);
+
+  &__textarea-counter {
+    color: global.$color-green;
+
+    &::after {
+      content: "/1000";
+    }
+
+    &[aria-invalid="true"] {
+      color: global.$color-red;
+    }
+  }
 }

@@ -1,5 +1,5 @@
 @use "./../../styles/global";
 
 .full-question {
-  @include global.flexbox($direction: column, $gap: global.$size-m);
+  @include global.flexbox($direction: column, $gap: global.$size-4xl);
 }

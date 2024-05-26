@@ -1,2 +1,21 @@
-.asnwer-form {
+@use "./../../../../styles/global";
+
+.answer-form {
+  @include global.flexbox($direction: column, $gap: global.$size-m);
+
+  &__textarea-counter {
+    color: global.$color-green;
+
+    &::after {
+      content: "/1000";
+    }
+
+    &[aria-invalid="true"] {
+      color: global.$color-red;
+    }
+  }
+
+  &__inputs {
+    @include global.flexbox($direction: column, $gap: global.$size-m);
+  }
 }

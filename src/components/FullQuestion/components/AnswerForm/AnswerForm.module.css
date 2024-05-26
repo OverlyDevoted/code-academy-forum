@@ -1,1 +1,27 @@
-/*# sourceMappingURL=AnswerForm.module.css.map */
+.answer-form {
+  align-content: normal;
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+.answer-form__textarea-counter {
+  color: rgb(38, 182, 38);
+}
+.answer-form__textarea-counter::after {
+  content: "/1000";
+}
+.answer-form__textarea-counter[aria-invalid=true] {
+  color: rgb(216, 46, 46);
+}
+.answer-form__inputs {
+  align-content: normal;
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  justify-content: flex-start;
+}/*# sourceMappingURL=AnswerForm.module.css.map */

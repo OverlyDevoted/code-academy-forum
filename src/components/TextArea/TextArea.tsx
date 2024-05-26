@@ -6,7 +6,7 @@ const cx = classNames.bind(styles);
 
 type TextAreaProps = {
   id: string;
-  onChange: React.ChangeEventHandler<HTMLTextAreaElement>;
+  onChange?: React.ChangeEventHandler<HTMLTextAreaElement>;
   placeholder?: string;
 };
 
