@@ -1,8 +1,6 @@
 @use "./../../styles/global";
 
 .card {
-  @include global.box-shadow-xs;
-
   border: solid 1px global.$color-gray-200;
   padding: global.$size-l;
   width: 100%;

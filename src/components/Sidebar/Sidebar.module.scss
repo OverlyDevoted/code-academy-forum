@@ -2,11 +2,56 @@
 
 .sidebar {
   @include global.flexbox($direction: column);
-  width: 230px;
+  width: 280px;
   flex-shrink: 0;
   position: sticky;
   top: 0;
   max-height: 100dvh;
+
+  @include global.tablet-breakpoint {
+    position: fixed;
+    height: 100%;
+    z-index: 100;
+    transition: 300ms transform;
+    pointer-events: none;
+
+    &__card-wrapper {
+      transform: translate(-100%);
+    }
+
+    &__background {
+      background: rgb(0, 0, 0);
+      background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.8) 0%,
+        rgba(255, 255, 255, 0.1) 100%
+      );
+      z-index: 99;
+    }
+
+    &--expanded {
+      pointer-events: all;
+      display: flex;
+      flex-direction: row;
+      transform: translate(0);
+      width: 100%;
+    }
+
+    &--expanded &__card-wrapper {
+      min-width: 280px;
+
+      transform: translate(0);
+    }
+
+    &--expanded &__background {
+      width: 100%;
+    }
+  }
+
+  &__card-wrapper {
+    height: 100%;
+  }
+
   &__content {
     @include global.flexbox($direction: column, $gap: global.$size-xl);
   }
@@ -22,5 +67,9 @@
 
   &__new-post-button {
     color: global.$color-black;
+  }
+
+  &__link-home {
+    display: inherit;
   }
 }

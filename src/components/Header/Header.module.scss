@@ -1,0 +1,32 @@
+@use "./../../styles/global";
+
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: none;
+  height: 64px;
+  padding: global.$size-xs global.$size-m;
+  @include global.tablet-breakpoint {
+    & {
+      display: block;
+    }
+  }
+  &__icon {
+    background-color: global.$color-white;
+    transition: 200ms;
+    max-height: 100%;
+    &:hover {
+      @include global.border-radius-circle;
+      background: rgba(148, 148, 148, 0.25);
+      backdrop-filter: blur(1px);
+      -webkit-backdrop-filter: blur(4px);
+      cursor: pointer;
+    }
+  }
+}

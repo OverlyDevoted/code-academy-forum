@@ -12,37 +12,49 @@ import styles from "./Sidebar.module.css";
 
 const cx = classNames.bind(styles);
 
-export const Sidebar = () => {
+interface SidebarProps {
+  isExpanded: boolean;
+  onClose: React.MouseEventHandler<HTMLDivElement>;
+}
+
+export const Sidebar = ({ isExpanded, onClose }: SidebarProps) => {
   const { isLogged } = useAuth();
   const { userData, isFetched } = useUserDatta();
 
+  console.log(isExpanded);
+
   return (
-    <aside className={cx("sidebar")}>
-      <Card isFullHeight boxShadow="s">
-        <div className={cx("sidebar__content")}>
-          <Link href="/">
-            <CodeAcademyLogo />
-          </Link>
-          <UserBadge
-            username={
-              userData && isLogged
-                ? `${userData.first_name} ${userData.second_name}`
-                : undefined
-            }
-            isFetched={isLogged ? isFetched : true}
-            hue={userData?.hue ?? 0}
-          />
-          <div className={cx("sidebar__header")}>
-            <div className={cx("sidebar__header-content")}>
-              <span>Your questions</span>
-              <Link className={cx("sidebar__new-post-button")} href="/create">
-                <NewPostIcon />
-              </Link>
+    <aside className={cx("sidebar", { "sidebar--expanded": isExpanded })}>
+      <div className={cx("sidebar__card-wrapper")}>
+        <Card isFullHeight boxShadow="none">
+          <div className={cx("sidebar__content")}>
+            <Link className={cx("sidebar__link-home")} href="/">
+              <CodeAcademyLogo />
+            </Link>
+            <UserBadge
+              username={
+                userData && isLogged
+                  ? `${userData.first_name} ${userData.second_name}`
+                  : undefined
+              }
+              isFetched={isLogged ? isFetched : true}
+              hue={userData?.hue ?? 0}
+            />
+            <div className={cx("sidebar__header")}>
+              <div className={cx("sidebar__header-content")}>
+                <span>Your questions</span>
+                <Link className={cx("sidebar__new-post-button")} href="/create">
+                  <NewPostIcon />
+                </Link>
+              </div>
+              <Divider />
             </div>
-            <Divider />
           </div>
-        </div>
-      </Card>
+        </Card>
+      </div>
+      {isExpanded && (
+        <div className={cx("sidebar__background")} onClick={onClose}></div>
+      )}
     </aside>
   );
 };

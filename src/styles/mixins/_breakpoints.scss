@@ -1,0 +1,7 @@
+@use "./../variables/breakpoints";
+
+@mixin tablet-breakpoint {
+  @media screen and (max-width: breakpoints.$tablet-breakpoint) {
+    @content;
+  }
+}

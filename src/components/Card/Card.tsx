@@ -7,7 +7,7 @@ const cx = classNames.bind(styles);
 interface CardProps {
   children: React.ReactNode;
   borderRadius?: "m" | "xs";
-  boxShadow?: "m" | "s" | "xs";
+  boxShadow?: "m" | "s" | "xs" | "none";
   isFullHeight?: boolean;
   onHover?: boolean;
 }
