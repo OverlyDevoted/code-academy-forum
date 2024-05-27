@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useRouter } from "next/router";
 import { MainLayout } from "@/layouts/MainLayout";
 import { CreateQuestionForm } from "@/components/CreateQuestionForm";
 import { Dialog } from "@/components/Dialog";
 import { Divider } from "@/components/Divider";
 
 const CreatePage = () => {
+  const router = useRouter();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   return (
     <MainLayout isAuthorizedPage>
@@ -12,10 +14,10 @@ const CreatePage = () => {
       {isDialogOpen && (
         <Dialog
           onClose={() => setIsDialogOpen(false)}
-          label="Go to question"
+          label="Go to questions"
           secondaryLabel="Create new"
           onConfirm={() => {
-            console.log("redirect");
+            router.push("/");
           }}
         >
           <h2>New question added!</h2>

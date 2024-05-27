@@ -72,9 +72,9 @@ answer: id, answer_text, date, liked_by, question_id
 ## Papildomos uzduotys
 
 - [x] Header offset
-- [ ] Header responsiveness
-- [ ] Clear fields on question asked
-- [ ] Redirect button on question asked
+- [x] Header responsiveness
+- [x] Clear fields on question asked
+- [x] Redirect button on question asked
 - [ ] Duomenu trinimui dialogai
 - [ ] view your questions on sidebar
 - [ ] make logout button prettier

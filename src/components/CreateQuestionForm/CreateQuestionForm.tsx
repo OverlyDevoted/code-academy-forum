@@ -64,9 +64,11 @@ export const CreateQuestionForm = ({ onSuccess }: CreateQuestionFormProps) => {
         token
       );
       onSuccess();
+
       setSelectedOption(undefined);
-      questionTitleRef.current?.setAttribute("value", "");
-      questionTextRef.current?.setAttribute("value", "");
+      if (questionTitleRef.current) questionTitleRef.current.value = "";
+      if (questionTextRef.current) questionTextRef.current.value = "";
+
       return res;
     },
     enabled: false,
