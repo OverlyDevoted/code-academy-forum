@@ -1,33 +1,33 @@
-Baigiamasis projektas
+# Final CodeAcademy project
 
-Šio projekto metu reikės sukurti internetinį forumą naudojant React, NodeJS Express ir MongoDB arba MySQL. Forumo tikslas - leisti užduoti klausimus, į juos atsakinėti bei žymėti patinkančius arba nepatinkančius atsakymus. Galite įsivaizduoti kažką panašaus į https://stackoverflow.com/questions, tik jums rekės padaryt supaprastintą versiją.
+During this project an internet forum was made using React for frontend, NodeJS Express for backend and MongoDB for dababase.
 
-Funkcionalumas:
+With the application users can post questions. Questions consist of question title, question text. Users can leave answers under posted questions and like or dislike other answers. User would not be able to do all of these actions without being logged in. So user can register/login to get authenticated. Without being authenticated an user can only view questions/answers.
 
-## Autentikacija
+Another challenge was to come up with the design myself. I drew up a wireframe taking inspiration from several different forum pages. The page had to be responsive.
 
-- [x] Registruotis
-- [x] Prisijungti
+## Frontend Functionality:
 
-## Klausimai
+### Authentication
 
-- [x] Peržiūrėti klausimų sąrašą.
-- [x] Užduoti naują klausimą (tik prisijungus)
-- [x] Ištrinti klausimą (tik prisiijungus)
-- [x] Filtruoti į atsakytus arba neatsakytus klausimus // EXTRA
+- [x] Register
+- [x] Login
 
-## Atsakymai
+### Questions
 
-- [x] Peržiūrėti klausimų atsakymus
-- [x] Atsakyti į užduotą klausimą (tik prisijungus) // EXTRA
-- [x] Ištrinti atsakymą (tik prisijungus) // EXTRA
-- [x] Žymėti/atžymėti patinkačius ir nepatinkančius atsakymus (like/dislike) (tik prisijungus)
+- [x] View question list
+- [x] Ask new questions (authenticated)
+- [x] Delete questions (authenticated)
+- [x] Filter by answered and unanswered questions // EXTRA
 
-Forumo projektas sudeda iš frontend'o ir backend'o dalių:
-Backend'e naudosime NodeJS Express, MongoDB arba MySQL ir kelis papildomus npm paketus, kuries palengvins darbą.
-Frontend'e naudosime React. Kaip ir backend'e node express, taip pat galima naudoti papildomjus npm paketus.
+### Atsakymai
 
-### Backend'as
+- [x] View question answers
+- [x] Answer under a question (authenticated) // EXTRA
+- [x] delete answer (authenticated) // EXTRA
+- [x] Like/dislike answers (like/dislike) (authenticated)
+
+## Backend
 
 - [x] POST /register
 - [x] POST /login
@@ -40,36 +40,53 @@ Frontend'e naudosime React. Kaip ir backend'e node express, taip pat galima naud
 - [x] POST /question/:id/answers
 - [x] DELETE /answer/:id
 
-### Frontend'as
+## Evaluation criteria
 
-Frontend'as neturi nustatyto dizaino , kurį reikia atkartoti. Tačiau jum tenka sunkesnė užduotis - patiems sugalvoti ir sukurti puslapio dizainą. Svarbiausia išpildyti visus funkcinius reikalavimus ir validuoti vartotojo įvedamus duomenis.
+- During final showcase and review these criteria for the final mark where considered:
 
-Puslapis turi gerai atrodyt tiek ant kompiuterinės tiek ant telefono versijos.
+* Code quality;
+* Best coding practices;
+* Functional requirement completeness;
+* General design;
+* Answers to teacher's questions;
 
-Užduoties įkėlimo instrukcijos
+## Backend
 
-1. Sukurti GitHub repozitoriją.
+[Link to backend](https://github.com/OverlyDevoted/code-academy-forum-back)
 
-2.!!! Kiekvienos paskaitos metu ar darant užuoti koda pushint bent 2 kartus per paskaitą. !!!
+## Wireframes
 
-3. Galutine kodo versija pasidalinti su dėstytoju.
+![Logins](./public/logins.PNG)
 
-Sėkmės!
+![Main](./public/questionandanswers.PNG)
 
-- Galutinio atsiskaitymo metu bus atsižvelgiama į:
+## Final project images
 
-* Kodo kokybę;
-* Gerasias programavimo praktikas;
-* Funkcinius reikalavimus;
-* Bendrą web poslapio vaizdą;
-* Programuotojo žinias kurios buvo pritaikytos užduoties atlikimui;
+### Main page
 
-user: first_name, second_name, email, password, id,
-category: category_name, id
-question: question_text, date, id, user_id, category_id
-answer: id, answer_text, date, liked_by, question_id
+![Main page](./public/main.PNG)
 
-## Papildomos uzduotys
+### Question page
+
+![Question page](./public/question.PNG)
+
+### Question page answering portion
+
+![Question page answering portion](./public/answering.PNG)
+
+### Ask page
+
+![Ask page](./public/ask.PNG)
+
+### Login page
+
+![Login](./public/login.PNG)
+
+### Register page
+
+![Register](./public/register.PNG)
+
+## Extra tasks/improvements
 
 - [x] Header offset
 - [x] Header responsiveness
@@ -84,6 +101,7 @@ answer: id, answer_text, date, liked_by, question_id
 - [ ] prettier dialogs
 - [ ] make UI more alike to cao.lt
 - [ ] button UI shift when loading
+- [ ] Improved search. Filter by date, answers, category, name
 - [ ] skeleton loading for items
 - [ ] infinite scroll questions/asnwers
 - [ ] markdown
