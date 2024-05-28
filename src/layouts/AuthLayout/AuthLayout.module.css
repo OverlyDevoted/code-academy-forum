@@ -8,7 +8,7 @@
   justify-content: space-around;
   height: 100%;
   max-width: 1440px;
-  margin-inline: auto;
+  margin: auto;
   padding: 1rem;
 }
 .container__hero-container {

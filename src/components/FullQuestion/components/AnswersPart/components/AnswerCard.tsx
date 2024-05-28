@@ -80,66 +80,67 @@ export const AnswerCard = ({ answer }: AnswerCardProps) => {
             <span className={cx("answer-card__answered")}>Answered on</span>
             <span>{new Date(answer.createdAt).toDateString()}</span>
           </div>
-          {isLogged && (
-            <div className={cx("answer-card__actions")}>
-              <div className={cx("answer-card__action", "answer-card__like")}>
-                <span>{answer.liked_by.length}</span>
-                <div>
-                  {hasLiked ? (
-                    <ThumbsUpFilledIcon className={cx("answer-card__icon")} />
-                  ) : (
-                    <ThumbsUpIcon
-                      className={cx("answer-card__icon")}
-                      onClick={() => {
+
+          <div className={cx("answer-card__actions")}>
+            <div className={cx("answer-card__action", "answer-card__like")}>
+              <span>{answer.liked_by.length}</span>
+              <div>
+                {hasLiked ? (
+                  <ThumbsUpFilledIcon className={cx("answer-card__icon")} />
+                ) : (
+                  <ThumbsUpIcon
+                    className={cx("answer-card__icon", {
+                      "answer-card__icon--disabled": !isLogged,
+                    })}
+                    onClick={() => {
+                      if (isLogged)
                         patchMutate({
                           answer_id: answer.id,
                           is_like: true,
                           token: getToken() ?? "",
                         });
-                      }}
-                    />
-                  )}
-                </div>
+                    }}
+                  />
+                )}
               </div>
-              <div
-                className={cx("answer-card__action", "answer-card__dislike")}
-              >
-                <span>{answer.disliked_by.length}</span>
-                <div>
-                  {hasDisliked ? (
-                    <ThumbsDownFilledIcon className={cx("answer-card__icon")} />
-                  ) : (
-                    <ThumbsDownIcon
-                      className={cx("answer-card__icon")}
-                      onClick={() => {
+            </div>
+            <div className={cx("answer-card__action", "answer-card__dislike")}>
+              <span>{answer.disliked_by.length}</span>
+              <div>
+                {hasDisliked ? (
+                  <ThumbsDownFilledIcon className={cx("answer-card__icon")} />
+                ) : (
+                  <ThumbsDownIcon
+                    className={cx("answer-card__icon", {
+                      "answer-card__icon--disabled": !isLogged,
+                    })}
+                    onClick={() => {
+                      if (isLogged)
                         patchMutate({
                           answer_id: answer.id,
                           is_like: false,
                           token: getToken() ?? "",
                         });
-                      }}
-                    />
-                  )}
-                </div>
-              </div>
-              {isOwner && (
-                <div
-                  className={cx("answer-card__action", "answer-card__delete")}
-                >
-                  <TrashCan
-                    className={cx("answer-card__icon")}
-                    onClick={() => {
-                      deleteMutate({
-                        answer_id: answer.id,
-                        token: getToken() ?? "",
-                      });
                     }}
                   />
-                  {isError && <div>Unable to delete answer</div>}
-                </div>
-              )}
+                )}
+              </div>
             </div>
-          )}
+            {isOwner && (
+              <div className={cx("answer-card__action", "answer-card__delete")}>
+                <TrashCan
+                  className={cx("answer-card__icon")}
+                  onClick={() => {
+                    deleteMutate({
+                      answer_id: answer.id,
+                      token: getToken() ?? "",
+                    });
+                  }}
+                />
+                {isError && <div>Unable to delete answer</div>}
+              </div>
+            )}
+          </div>
         </div>
       </article>
     </Card>

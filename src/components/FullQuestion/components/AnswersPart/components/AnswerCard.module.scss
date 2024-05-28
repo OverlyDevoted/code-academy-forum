@@ -59,6 +59,14 @@
       background-color: global.$color-gray-200;
       cursor: pointer;
     }
+
+    &--disabled {
+      opacity: 0.4;
+      &:hover {
+        cursor: not-allowed;
+        background-color: global.$color-white;
+      }
+    }
   }
 
   &__answered {

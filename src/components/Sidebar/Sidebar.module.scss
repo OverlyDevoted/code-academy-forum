@@ -4,10 +4,35 @@
   @include global.flexbox($direction: column);
   width: 280px;
   flex-shrink: 0;
-  position: sticky;
   top: 0;
   max-height: 100dvh;
 
+  &__card-wrapper {
+    height: 100%;
+    position: fixed;
+    width: 280px;
+  }
+
+  &__content {
+    @include global.flexbox($direction: column, $gap: global.$size-xl);
+  }
+
+  &__header {
+    font-weight: 600;
+    @include global.flexbox($direction: column, $gap: global.$size-s);
+  }
+
+  &__header-content {
+    @include global.flexbox($justifyContent: space-between);
+  }
+
+  &__new-post-button {
+    color: global.$color-black;
+  }
+
+  &__link-home {
+    display: inherit;
+  }
   @include global.tablet-breakpoint {
     position: fixed;
     height: 100%;
@@ -17,6 +42,7 @@
 
     &__card-wrapper {
       transform: translate(-100%);
+      position: relative;
     }
 
     &__background {
@@ -46,30 +72,5 @@
     &--expanded &__background {
       width: 100%;
     }
-  }
-
-  &__card-wrapper {
-    height: 100%;
-  }
-
-  &__content {
-    @include global.flexbox($direction: column, $gap: global.$size-xl);
-  }
-
-  &__header {
-    font-weight: 600;
-    @include global.flexbox($direction: column, $gap: global.$size-s);
-  }
-
-  &__header-content {
-    @include global.flexbox($justifyContent: space-between);
-  }
-
-  &__new-post-button {
-    color: global.$color-black;
-  }
-
-  &__link-home {
-    display: inherit;
   }
 }

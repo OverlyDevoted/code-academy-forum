@@ -76,6 +76,13 @@
   background-color: #dfdfdf;
   cursor: pointer;
 }
+.answer-card__icon--disabled {
+  opacity: 0.4;
+}
+.answer-card__icon--disabled:hover {
+  cursor: not-allowed;
+  background-color: #ffffff;
+}
 .answer-card__answered {
   font-weight: 700;
 }/*# sourceMappingURL=AnswerCard.module.css.map */
