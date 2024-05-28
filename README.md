@@ -75,7 +75,17 @@ answer: id, answer_text, date, liked_by, question_id
 - [x] Header responsiveness
 - [x] Clear fields on question asked
 - [x] Redirect button on question asked
-- [ ] Duomenu trinimui dialogai
+- [ ] Data removal dialogs
 - [ ] view your questions on sidebar
-- [ ] make logout button prettier
+- [ ] Make logout button prettier
 - [ ] Optimisitc UI update (when liking)
+- [ ] Userbadge loading state
+- [ ] finish register/login styling
+- [ ] prettier dialogs
+- [ ] make UI more alike to cao.lt
+- [ ] button UI shift when loading
+- [ ] skeleton loading for items
+- [ ] infinite scroll questions/asnwers
+- [ ] markdown
+- [ ] profanity checks
+- [ ] microsoft login (for codeacademy emails)
