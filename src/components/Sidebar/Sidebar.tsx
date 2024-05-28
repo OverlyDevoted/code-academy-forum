@@ -21,8 +21,6 @@ export const Sidebar = ({ isExpanded, onClose }: SidebarProps) => {
   const { isLogged } = useAuth();
   const { userData, isFetched } = useUserDatta();
 
-  console.log(isExpanded);
-
   return (
     <aside className={cx("sidebar", { "sidebar--expanded": isExpanded })}>
       <div className={cx("sidebar__card-wrapper")}>
